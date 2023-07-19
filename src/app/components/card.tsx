@@ -16,7 +16,7 @@ type Props = {
 export default function Card({ cardImage, tags, route, textContent }: Props) {
     return (
         <figure className="flex flex-col min-h-fit bg-white rounded lg:w-1/4 md:w-1/3 sm:w-3/4 m-4">
-            <div className='w-full h-96 relative hover:h-full'>
+            <div className='w-full h-96 relative'>
                 <Image
                     className='object-cover'
                     src={cardImage.src}
