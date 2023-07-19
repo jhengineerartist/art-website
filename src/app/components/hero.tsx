@@ -31,12 +31,12 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
                     fill
                     quality={100}
                 />
-                <div className="relative mx-auto text-white text-center z-1">
-                    <h1 className="text-6xl p-6 font-bold">Jose Hirshman Art</h1>
-                    <div className="relative p-16">
+                <div className="flex flex-col relative mx-auto text-white text-center z-1">
+                    <h1 className="lg:text-6xl md:text-6xl sm:text-4xl p-6 font-bold">Jose Hirshman Art</h1>
+                    <div className="relative h-32">
                         {logo}
                     </div>
-                    <p className="text-2xl p-6">Explore the Portfolio</p>
+                    <p className="lg:text-2xl text-lg p-6">Explore the Portfolio</p>
                 </div>
             </div>
         </section>

@@ -15,8 +15,8 @@ type Props = {
 
 export default function Card({ cardImage, tags, route, textContent }: Props) {
     return (
-        <figure className="min-h-1/2 bg-white rounded shadow-lg">
-            <div className='w-full h-64 relative'>
+        <figure className="flex flex-col min-h-fit bg-white rounded shadow-lg">
+            <div className='w-full h-96 relative '>
                 <Image
                     className='object-cover'
                     src={cardImage.src}
@@ -24,7 +24,7 @@ export default function Card({ cardImage, tags, route, textContent }: Props) {
                     alt={cardImage.alt}
                     fill />
             </div>
-            <figcaption className='flex-auto'>
+            <figcaption className="flex flex-col justify-between min-h-1/3">
                 <div className="px-6 py-4">
                     <h2 className="font-bold text-xl mb-2">The Coldest Sunset</h2>
                     <p className="text-gray-700 text-base">

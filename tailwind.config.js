@@ -12,6 +12,9 @@ module.exports = {
       },
       minHeight: {
         '1/2': '50%',
+      },
+      screens: {
+        'xs': '475px',
       }
     },
   },
