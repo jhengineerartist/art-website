@@ -11,7 +11,7 @@ const card1Image = {
 
 export default function cardsection() {
     return (
-        <section className="mx-auto max-w-screen-2xl min-h-screen h-fit content-stretch px-8 my-8 grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <section className="flex flex-wrap mx-auto h-fit content-stretch justify-center">
             <Card
                 cardImage={card1Image}
                 title=""
