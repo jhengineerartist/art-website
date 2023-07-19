@@ -1,4 +1,4 @@
-import HeroSection from "./components/hero";
+import HeroSection from "./components/herosection";
 import CardSection from "./components/cardsection"
 import herostudy from "../../public/placeholders/hero-study.png"
 
