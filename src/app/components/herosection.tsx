@@ -22,7 +22,7 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
         : undefined
     return (
         <section id="hero">
-            <div className=" flex items-center bg-gradient-to-t from-black to-33 relative w-full h-screen sm:h[450px] lg:h-[800px]">
+            <div className="flex items-center bg-gradient-to-t from-black to-33 relative w-full h-screen">
                 <Image
                     src={heroImage.src}
                     blurDataURL={heroImage.blurUrl}

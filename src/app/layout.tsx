@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { PT_Serif } from 'next/font/google'
+import Navbar from './components/navbar'
 
 const font = PT_Serif({ weight: ["400", "700"], style: ["normal", "italic"], subsets: ["latin"] })
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={`${font.className} bg-panettone-300`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }

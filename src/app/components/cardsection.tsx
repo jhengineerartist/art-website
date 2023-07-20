@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './card'
 import ph_graphite from "../../../public/placeholders/graphite1.png"
+import getAllPostsData from '@/lib/mdprovider/placeholderprovider'
 
 const card1Image = {
     src: ph_graphite,
@@ -10,50 +11,16 @@ const card1Image = {
 
 
 export default function cardsection() {
+
+    const allPosts: BlogPost[] = getAllPostsData()
+
+    const cards = allPosts.map(post => {
+        return <Card blogPost={post} />
+    })
+
     return (
-        <section className="flex flex-wrap mx-auto h-fit content-stretch justify-center">
-            <Card
-                cardImage={card1Image}
-                title=""
-                textContent=""
-                route=""
-                tags={[]}
-            />
-            <Card
-                cardImage={card1Image}
-                title=""
-                textContent=""
-                route=""
-                tags={[]}
-            />
-            <Card
-                cardImage={card1Image}
-                title=""
-                textContent=""
-                route=""
-                tags={[]}
-            />
-            <Card
-                cardImage={card1Image}
-                title=""
-                textContent=""
-                route=""
-                tags={[]}
-            />
-            <Card
-                cardImage={card1Image}
-                title=""
-                textContent=""
-                route=""
-                tags={[]}
-            />
-            <Card
-                cardImage={card1Image}
-                title=""
-                textContent=""
-                route=""
-                tags={[]}
-            />
+        <section className="flex flex-wrap mx-auto h-fit content-stretch justify-center my-4">
+            {cards}
         </section>
     )
 }
