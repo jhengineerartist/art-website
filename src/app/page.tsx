@@ -10,7 +10,7 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className="bg-panettone-300">
       <HeroSection
         heroImage={heroImage}
         heroLogo={true} />

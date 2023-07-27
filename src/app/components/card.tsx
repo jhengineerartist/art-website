@@ -8,7 +8,7 @@ type Props = {
 export default function Card({ blogPost }: Props) {
     console.log(blogPost.heroImage)
     return (
-        <figure className='group flex flex-col min-h-fit bg-white rounded max-w-lg lg:w-2/5 md:w-[40%] sm:w-3/4 m-4 duration-500 hover:scale-105'>
+        <figure className='flex flex-col min-h-fit bg-white rounded max-w-lg lg:w-2/5 md:w-[40%] sm:w-3/4 m-4 duration-500 hover:scale-105'>
             <Link href={`/posts/${blogPost.slug}`}>
                 <div className=' w-full h-96 relative'>
                     <Image
