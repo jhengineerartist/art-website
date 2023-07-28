@@ -1,6 +1,8 @@
 ---
 title: Drawing with Charcoal
+summary: I've loved working with charcoal ever since I first learned how to properly sharpen a charcoal pencil to that super-fine atlier sharpness.  Charcoal allows to study and produce art with a full value range, making it an ideal medium for studying value...
 heroimage: /placeholders/charcoal1.png
+tags: charcoal,drawing,figure,studies,value
 ---
 
 # Working with Charcoal to Create Beautiful Nude Figure Drawings

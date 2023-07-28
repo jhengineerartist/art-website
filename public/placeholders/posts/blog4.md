@@ -1,6 +1,8 @@
 ---
 title: Plein Air Paintings
+summary: Painting outdoors combines some of my favorite activities.  With a portable easel, sun on my back, a pack of beers, and great company, a day of plein air painting is amazing...
 heroimage: /placeholders/hero-plein-air.png
+tags: plein-air,painting,oils,outdoors,color
 ---
 
 # The Art of Plein Air Oil Painting
