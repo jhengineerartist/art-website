@@ -7,8 +7,7 @@ const root = process.cwd()
 export default function getAllPostsData() {
     // Get file names under /posts
     const placeholderPath = path.join(root, 'public', 'placeholders', 'posts')
-    const fileNames = fs.readdirSync(placeholderPath);
-    console.log(fileNames)
+    const fileNames = fs.readdirSync(placeholderPath)
 
     const allPostsData = fileNames.map(file => {
         const filePath = path.join(placeholderPath, file)

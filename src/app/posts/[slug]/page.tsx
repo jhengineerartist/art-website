@@ -11,7 +11,7 @@ export default function BlogPage({ params }: { params: { slug: string } }) {
                 <div className='mx-auto prose max-lg:prose-base min-w-1/2 lg:prose-xl md:relative p-6 prose-h3:text-enchilada-600 text-enchilada-600'>
                     <ReactMarkdown>{bp.content}</ReactMarkdown>
                 </div>
-                <figure className='mt-8 items-center mx-auto w-1/2 max-h-fit max-lg:h-96 max-lg:w-full relative'>
+                <figure className='mt-8 bg-enchillada-100 items-center mx-auto w-1/2 max-h-fit max-lg:h-96 max-lg:w-full relative'>
                     <Image
                         className='object-contain object-top'
                         src={bp.heroImage}
