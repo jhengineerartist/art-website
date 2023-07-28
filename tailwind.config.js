@@ -16,6 +16,9 @@ module.exports = {
       screens: {
         xs: "475px",
       },
+      spacing: {
+        '128': '32rem',
+      }
     },
     colors: {
       transparent: "transparent",
