@@ -4,6 +4,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { useState } from "react";
 import FullScreenImage from "./FullScreenImage";
 
+
 type Params = {
     postData: BlogPost
 }
@@ -23,11 +24,11 @@ export default function PostView({ postData }: Params) {
     }
 
     return (
-        <article className="flex flex-col justify-around">
+        <article className="flex flex-col justify-around w-full" >
             <div className="mx-auto bg-enchilada-100 prose max-lg:prose-base min-w-1/2 lg:prose-xl relative p-6 prose-h3:text-enchilada-600 text-enchilada-600">
                 <figure className="items-center mx-auto w-full max-h-screen h-128 max-lg:h-64 relative">
                     <Image
-                        className="object-contain object-top"
+                        className="object-contain object-top duration-500 hover:scale-105"
                         src={heroImage}
                         alt={title}
                         fill

@@ -14,6 +14,7 @@ const blogData: BlogDataMap = {
   posts: []
 }
 
+// Grabs and caches all the posts from disk
 export default function getAllPostsData(): BlogPost[] {
   if (!blogData.didFetch) {
     console.log("Retrieving blog posts from the disk.")
