@@ -10,6 +10,8 @@ type BlogPost = {
 type FullScreenImageInfo = {
   src: string,
   alt: string,
+  height: number,
+  width: number,
   caption: string,
   hidden: boolean
 }

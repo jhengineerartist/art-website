@@ -11,7 +11,7 @@ type Params = {
 
 export default function PostView({ postData }: Params) {
     const { title, heroImage, content } = postData;
-    const [fullScrImage, setFullScrImage] = useState<FullScreenImageInfo>({ src: "", alt: "", caption: "", hidden: true });
+    const [fullScrImage, setFullScrImage] = useState<FullScreenImageInfo>({ src: "", alt: "", caption: "", height: 0, width: 0, hidden: true });
 
     const hideFullScreen = (hide: boolean) => {
         console.log('hiding')
@@ -32,21 +32,28 @@ export default function PostView({ postData }: Params) {
                 const image = node.children[0]
                 const metastring = image.properties.alt
                 const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
-                const width = metastring?.match(/{width: (.*?)}/)?.pop()
-                const height = metastring?.match(/{height: (.*?)}/)?.pop()
+                const width = metastring?.match(/{width: (.*?)}/)?.pop() as number
+                const height = metastring?.match(/{height: (.*?)}/)?.pop() as number
                 const isPriority = metastring?.toLowerCase().match('{priority}')
                 const caption = metastring?.match(/{caption: (.*?)}/)?.pop()
 
                 return (
                     <div className="">
                         <Image
+                            className="hover:ring focus:ring ring-enchilada-600 duration-300"
                             src={image.properties.src}
                             width={width}
                             height={height}
-                            className=""
                             alt={alt}
                             priority={isPriority}
-                            onClick={makeFullScreen({ src: image.properties.src, alt: alt, caption: caption, hidden: false })}
+                            onClick={makeFullScreen({
+                                src: image.properties.src,
+                                alt: alt,
+                                width: width,
+                                height: height,
+                                caption: caption,
+                                hidden: false
+                            })}
                         />
                     </div>)
             }
@@ -64,11 +71,10 @@ export default function PostView({ postData }: Params) {
             <div className="mx-auto bg-enchilada-100 prose max-lg:prose-base min-w-1/2 lg:prose-2xl relative p-6 prose-h3:text-enchilada-600 text-enchilada-600">
                 <figure className="items-center mx-auto w-full max-h-screen h-128 max-lg:h-64 relative">
                     <Image
-                        className="object-contain object-top duration-500 hover:scale-105"
+                        className="object-contain object-top hover:ring focus:ring ring-enchilada-600 duration-300"
                         src={heroImage}
                         alt={title}
                         fill
-                        onClick={makeFullScreen({ src: heroImage, alt: title, caption: "hero image", hidden: false })}
                     />
                 </figure>
                 <ReactMarkdown children={content} components={markdownComponents} />

@@ -16,7 +16,7 @@ export default function Card({ blogPost }: Props) {
   })
 
   return (
-    <figure className="flex flex-col min-h-fit bg-white rounded max-w-lg lg:w-2/5 md:w-[40%] sm:w-3/4 m-4 duration-500 hover:scale-105">
+    <figure className="flex flex-col min-h-fit bg-white rounded max-w-lg lg:w-2/5 md:w-[40%] sm:w-3/4 m-4 duration-500 hover:scale-105 active:scale-95">
       <Link href={`/posts/${slug}`}>
         <div className="w-full h-96 relative">
           <Image

@@ -11,8 +11,8 @@ type Params = {
 
 function FullScreenImage(params: Params) {
     const { info, hideFullScreen: setHidden } = params;
-    const { src, alt, caption, hidden } = info;
-
+    const { src, alt, width, height, caption, hidden } = info;
+    console.log(width)
     const closeRef = useRef<HTMLElement>(null);
 
     // Put a listener for when the user clicks somewhere,
@@ -34,14 +34,15 @@ function FullScreenImage(params: Params) {
 
     const content = !hidden
         ? (
-            <figure ref={closeRef} className="flex flex-col rounded-md my-auto bg-panettone-100 justify-center fixed z-10 max-w-5xl top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 drop-shadow-2xl h-[80%] w-[80%]">
-                <FaTimes className="m-4 text-4xl text-lilprince-900 hover:text-lilprince-200" onClick={setHidden(true)} />
-                <div className="h-4/5 relative">
+            <figure ref={closeRef} className="flex flex-col rounded-md my-auto bg-panettone-100 justify-center fixed z-10 max-w-5xl max-h-[80%] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 drop-shadow-2xl h-fit w-[80%]">
+                <FaTimes className="m-4 text-2xl text-lilprince-900 hover:text-lilprince-100 h-8" onClick={setHidden(true)} />
+                <div className="relative">
                     <Image
-                        className="object-contain drop-shadow-2xl object-top p-3"
+                        className="object-scale-down drop-shadow-2xl object-top p-3"
                         src={src}
                         alt={alt}
-                        fill
+                        width={width}
+                        height={height}
                     />
                 </div>
                 <figcaption className="h-1/5 p-3 relative">
