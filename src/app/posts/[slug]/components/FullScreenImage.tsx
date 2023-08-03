@@ -5,14 +5,13 @@ import { FaTimes } from "react-icons/fa"
 import { assertEventTargetIsNode } from "@/lib/utils/asserts";
 
 type Params = {
-    src: string;
-    alt: string;
-    hidden: boolean;
+    info: FullScreenImageInfo,
     hideFullScreen: (hide: boolean) => () => void;
 }
 
 function FullScreenImage(params: Params) {
-    const { src, alt, hidden, hideFullScreen: setHidden } = params;
+    const { info, hideFullScreen: setHidden } = params;
+    const { src, alt, caption, hidden } = info;
 
     const closeRef = useRef<HTMLElement>(null);
 
@@ -46,11 +45,11 @@ function FullScreenImage(params: Params) {
                     />
                 </div>
                 <figcaption className="h-1/5 p-3 relative">
-                    Hello World!
+                    {caption}
                 </figcaption>
             </figure>
         )
-        : <></>
+        : null
 
     return content;
 }
