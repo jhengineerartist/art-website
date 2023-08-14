@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { useState } from "react";
-import FullScreenImage from "./FullScreenImage";
+import FullScreenImage from "../../../components/fullscreenimage";
 
 
 type Params = {
@@ -11,16 +11,28 @@ type Params = {
 
 export default function PostView({ postData }: Params) {
     const { title, heroImage, content } = postData;
-    const [fullScrImage, setFullScrImage] = useState<FullScreenImageInfo>({ src: "", alt: "", caption: "", height: 0, width: 0, hidden: true });
+    const [fullScrImage, setFullScrImage] = useState<[ArtworkInfo, boolean]>([{
+        id: 0,
+        src: "",
+        title: "",
+        caption: "",
+        height: 0,
+        width: 0,
+        date: "",
+        class: ArtworkClass.GalleryPiece,
+        related: [],
+        tags: []
+    },
+        true]);
 
-    const hideFullScreen = (hide: boolean) => {
+    const hideFullScreen = () => {
         console.log('hiding')
-        return () => setFullScrImage({ ...fullScrImage, hidden: hide })
+        return () => setFullScrImage([fullScrImage[0], true])
     }
 
-    const makeFullScreen = (imageInfo: FullScreenImageInfo) => {
+    const makeFullScreen = (imageInfo: ArtworkInfo) => {
         console.log('making fullscreen')
-        return () => setFullScrImage(imageInfo)
+        return () => setFullScrImage([imageInfo, false])
     }
 
     const markdownComponents: object = {
@@ -31,28 +43,32 @@ export default function PostView({ postData }: Params) {
             if (node.children[0].tagName === "img") {
                 const image = node.children[0]
                 const metastring = image.properties.alt
-                const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
+                const title = metastring?.match(/{title: (.*?)}/)?.pop()
                 const width = metastring?.match(/{width: (.*?)}/)?.pop() as number
                 const height = metastring?.match(/{height: (.*?)}/)?.pop() as number
                 const isPriority = metastring?.toLowerCase().match('{priority}')
                 const caption = metastring?.match(/{caption: (.*?)}/)?.pop()
 
                 return (
-                    <div className="">
+                    <div>
                         <Image
                             className="hover:ring focus:ring ring-enchilada-600 duration-300"
                             src={image.properties.src}
                             width={width}
                             height={height}
-                            alt={alt}
+                            alt={caption}
                             priority={isPriority}
                             onClick={makeFullScreen({
+                                id: 0,
+                                title,
                                 src: image.properties.src,
-                                alt: alt,
-                                width: width,
-                                height: height,
-                                caption: caption,
-                                hidden: false
+                                width,
+                                height,
+                                caption,
+                                date: "",
+                                class: ArtworkClass.GalleryPiece,
+                                related: [],
+                                tags: []
                             })}
                         />
                     </div>)
@@ -79,7 +95,7 @@ export default function PostView({ postData }: Params) {
                 </figure>
                 <ReactMarkdown children={content} components={markdownComponents} />
             </div>
-            <FullScreenImage {...{ info: fullScrImage, hideFullScreen: hideFullScreen }} />
+            <FullScreenImage {...{ state: fullScrImage, hideFullScreen: hideFullScreen }} />
         </article >
     )
 }

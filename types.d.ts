@@ -1,17 +1,30 @@
+enum ArtworkClass {
+  GalleryPiece = 1,
+  Study,
+  PleinAir,
+  MinorWork,
+  WorkInProgress,
+}
+
 type BlogPost = {
   slug: string;
   title: string;
   heroImage: string;
-  tags: string[];
   summary: string;
   content: string;
+  date: string,
+  tags: string[];
 };
 
-type FullScreenImageInfo = {
+type ArtworkInfo = {
+  id: number,
   src: string,
-  alt: string,
   height: number,
   width: number,
+  title: string,
   caption: string,
-  hidden: boolean
+  class: ArtworkClass,
+  date: string,
+  related: number[]
+  tags: string[]
 }

@@ -38,8 +38,9 @@ export default function getAllPostsData(): BlogPost[] {
         title: data.title,
         heroImage: data.heroimage,
         tags: data.tags.split(','),
+        date: data.date,
         summary: data.summary,
-        content: content,
+        content: content
       };
     });
 
