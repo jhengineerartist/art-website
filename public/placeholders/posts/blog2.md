@@ -1,6 +1,7 @@
 ---
 title: Drawing with Charcoal
 summary: I've loved working with charcoal ever since I first learned how to properly sharpen a charcoal pencil to that super-fine atlier sharpness.  Charcoal allows to study and produce art with a full value range, making it an ideal medium for studying value...
+date: 2023-07-19T00:00:00Z
 heroimage: /placeholders/charcoal1.png
 tags: charcoal,drawing,figure,studies,value
 ---
@@ -9,7 +10,7 @@ tags: charcoal,drawing,figure,studies,value
 
 Charcoal drawing is an expressive and versatile medium that allows artists to capture the human form in a unique and captivating way. When working with charcoal, artists can create stunning nude figure drawings that evoke emotion and showcase the beauty of the human body. In this blog post, we will explore the art of figure drawing with charcoal, offering tips and techniques to help you achieve impressive results.
 
-![AltText {width: 768} {height: 432} {priority} {caption: Photo by Someone}](/placeholders/charcoal1.png)
+![AltText {width: 768} {height: 432} {priority} {title: Sample} {caption: Photo by Someone}](/placeholders/charcoal1.png)
 
 ## Preparing Your Workspace
 
