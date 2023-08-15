@@ -1,9 +1,7 @@
 'use client'
 import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { useState } from "react";
-import FullScreenImage from "../../../components/fullscreenimage";
-
+import { FullScreenImage, useFullScreenImage } from "@/app/components/fullscreenimage";
 
 type Params = {
     postData: BlogPost
@@ -11,29 +9,8 @@ type Params = {
 
 export default function PostView({ postData }: Params) {
     const { title, heroImage, content } = postData;
-    const [fullScrImage, setFullScrImage] = useState<[ArtworkInfo, boolean]>([{
-        id: 0,
-        src: "",
-        title: "",
-        caption: "",
-        height: 0,
-        width: 0,
-        date: "",
-        class: ArtworkClass.GalleryPiece,
-        related: [],
-        tags: []
-    },
-        true]);
 
-    const hideFullScreen = () => {
-        console.log('hiding')
-        return () => setFullScrImage([fullScrImage[0], true])
-    }
-
-    const makeFullScreen = (imageInfo: ArtworkInfo) => {
-        console.log('making fullscreen')
-        return () => setFullScrImage([imageInfo, false])
-    }
+    const [fullScrImage, showFullScreen, hideFullScreen] = useFullScreenImage();
 
     const markdownComponents: object = {
         p: (paragraph: { node?: any, children?: any }) => {
@@ -58,7 +35,7 @@ export default function PostView({ postData }: Params) {
                             height={height}
                             alt={caption}
                             priority={isPriority}
-                            onClick={makeFullScreen({
+                            onClick={showFullScreen({
                                 id: 0,
                                 title,
                                 src: image.properties.src,
@@ -66,7 +43,7 @@ export default function PostView({ postData }: Params) {
                                 height,
                                 caption,
                                 date: "",
-                                class: ArtworkClass.GalleryPiece,
+                                class: "GalleryPiece",
                                 related: [],
                                 tags: []
                             })}

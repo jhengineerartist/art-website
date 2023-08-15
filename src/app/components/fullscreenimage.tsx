@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaTimes } from "react-icons/fa"
 import { assertEventTargetIsNode } from "@/lib/utils/asserts";
 
@@ -9,9 +9,40 @@ type Params = {
     hideFullScreen: () => () => void;
 }
 
-function FullScreenImage(params: Params) {
+// Exposing the common hook logic used for setting up a full screen image view
+export function useFullScreenImage(): [[ArtworkInfo, boolean], (a0: ArtworkInfo) => () => void, () => () => void] {
+    // The useState state consists of the ArtworkInfo for the fullscreened artwork, 
+    // and whether the fullscreen view is hidden (false) or shown (true)
+    const [fullScrImage, setFullScrImage] = useState<[ArtworkInfo, boolean]>([{
+        id: 0,
+        src: "",
+        title: "",
+        caption: "",
+        height: 0,
+        width: 0,
+        date: "",
+        class: "GalleryPiece",
+        related: [],
+        tags: []
+    },
+        false]);
+
+    const hideFullScreen = () => {
+        console.log('hiding')
+        return () => setFullScrImage([fullScrImage[0], false])
+    }
+
+    const showFullScreen = (imageInfo: ArtworkInfo) => {
+        console.log('making fullscreen')
+        return () => setFullScrImage([imageInfo, true])
+    }
+
+    return [fullScrImage, showFullScreen, hideFullScreen]
+}
+
+export function FullScreenImage(params: Params) {
     const { state, hideFullScreen: setHidden } = params;
-    const [{ src, width, height, caption }, hidden] = state;
+    const [{ src, width, height, caption }, isFullScreen] = state;
     console.log(width)
     const closeRef = useRef<HTMLElement>(null);
 
@@ -32,13 +63,13 @@ function FullScreenImage(params: Params) {
         };
     }, [closeRef]);
 
-    const content = !hidden
+    const content = isFullScreen
         ? (
             <figure ref={closeRef} className="flex flex-col rounded-md my-auto bg-panettone-100 justify-center fixed z-10 max-w-5xl max-h-[80%] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 drop-shadow-2xl h-fit w-[80%]">
                 <FaTimes className="m-4 text-2xl text-lilprince-900 hover:text-lilprince-100 h-8" onClick={setHidden()} />
                 <div className="relative">
                     <Image
-                        className="object-scale-down drop-shadow-2xl object-top p-3"
+                        className="object-scale-down drop-shadow-2xl object-top p-3 relative"
                         src={src}
                         alt={caption}
                         width={width}
@@ -54,5 +85,3 @@ function FullScreenImage(params: Params) {
 
     return content;
 }
-
-export default FullScreenImage

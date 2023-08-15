@@ -1,10 +1,9 @@
-enum ArtworkClass {
-  GalleryPiece = 1,
-  Study,
-  PleinAir,
-  MinorWork,
-  WorkInProgress,
-}
+type ArtworkClass =
+  "GalleryPiece" |
+  "Study" |
+  "PleinAir" |
+  "MinorWork" |
+  "WorkInProgress"
 
 type BlogPost = {
   slug: string;
