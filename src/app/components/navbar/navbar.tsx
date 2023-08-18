@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="mx-auto flex justify-between items-center">
         <NavbarLogo />
         <NavbarLinks />
-        <SocialMedia />
+        <SocialMedia placement="navbar" />
         <NavbarDropdown isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} />
       </div>
     </nav>

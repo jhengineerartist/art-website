@@ -2,33 +2,37 @@ import React from "react";
 import Link from "next/link";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
 
+type SocialMediaProps = {
+    placement: "navbar" | "footer";
+};
 
-function SocialMedia() {
+function SocialMedia({ placement }: SocialMediaProps) {
+    const rootButtonClass = "hover:text-white hover:bg-enchilada-600 hover:border-enchilada-600 hover:rounded-lg p-2 transition-all duration-300 text-enchilada-100";
 
-    const socialMediaIconClass = "text-enchilada-100 hover:text-white hover:bg-enchilada-900 hover:border-enchilada-900 hover:rounded-lg p-2 transition-all duration-300";
+    const buttonClass = placement === "footer" ? `${rootButtonClass} text-xl` : `${rootButtonClass} text-3xl`;
 
     return (
-        <div className="hidden text-4xl sm:flex gap-2">
+        <div className={`${placement === "navbar" ? "hidden" : "flex sm:flex-row gap-2"} sm:flex gap-2`}>
             <Link
-                className={socialMediaIconClass}
+                className={buttonClass}
                 href="https://github.com/jhengineerartist"
             >
                 <FaGithub />
             </Link>
             <Link
-                className={socialMediaIconClass}
+                className={buttonClass}
                 href="https://twitter.com/JH_EngArt"
             >
                 <FaTwitter />
             </Link>
             <Link
-                className={socialMediaIconClass}
+                className={buttonClass}
                 href="https://www.instagram.com/jhirshmanart/"
             >
                 <FaInstagram />
             </Link>
         </div>
-    )
+    );
 }
 
-export default SocialMedia
+export default SocialMedia;

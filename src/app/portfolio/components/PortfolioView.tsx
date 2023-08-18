@@ -28,11 +28,12 @@ export default function PortfolioView({ artworkData }: Params) {
         )
     });
 
-    return (<div className="min-h-screen">
-        <h1 className="text-panettone-100 mx-auto p-3 text-4xl text-center">Portfolio</h1>
-        <div className="flex flex-wrap content-center justify-center h-full w-full">
-            {images}
-        </div>
-        <FullScreenImage {...{ state: fullScrImage, hideFullScreen: hideFullScreen }} />
-    </div>)
+    return (
+        <div className="min-h-screen">
+            <h1 className="text-panettone-100 mx-auto p-3 text-4xl text-center">Portfolio</h1>
+            <div className="flex flex-wrap content-center justify-center h-full w-full">
+                {images}
+            </div>
+            <FullScreenImage {...{ state: fullScrImage, hideFullScreen: hideFullScreen }} />
+        </div>)
 }
