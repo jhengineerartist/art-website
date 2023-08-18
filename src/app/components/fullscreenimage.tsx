@@ -65,21 +65,23 @@ export function FullScreenImage(params: Params) {
 
     const content = isFullScreen
         ? (
-            <figure ref={closeRef} className="flex flex-col rounded-md my-auto bg-panettone-100 justify-center fixed z-10 max-w-5xl max-h-[80%] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 drop-shadow-2xl h-fit w-[80%]">
-                <FaTimes className="m-4 text-2xl text-lilprince-900 hover:text-lilprince-100 h-8" onClick={setHidden()} />
-                <div className="relative">
+            <div className="aspect-w-16 aspect-h-9 flex justify-center items-center">
+                <figure ref={closeRef} className="flex flex-col rounded-md my-auto bg-panettone-100 justify-center fixed z-10 max-w-5xl max-h-[80vh] top-1/2 left-1/2 -translate-x-1/2 drop-shadow-2xl h-fit w-[80%]">
+                    <div>
+                        <FaTimes className="m-4 text-2xl text-lilprince-900 hover:text-lilprince-100 h-8" onClick={setHidden()} />
+                    </div>
                     <Image
-                        className="object-scale-down drop-shadow-2xl object-top p-3 relative"
+                        className="object-scale-down drop-shadow-2xl max-h-[60vh] object-top p-3 relative"
                         src={src}
                         alt={caption}
                         width={width}
                         height={height}
                     />
-                </div>
-                <figcaption className="h-1/5 p-3 relative">
-                    {caption}
-                </figcaption>
-            </figure>
+                    <figcaption className="h-1/5 p-3 mb-3 overflow-y-scroll relative">
+                        {caption}
+                    </figcaption>
+                </figure>
+            </div>
         )
         : null
 

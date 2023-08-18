@@ -14,16 +14,16 @@ export default function PortfolioView({ artworkData }: Params) {
 
     const images = artworkData.map(artwork => {
         return (
-            <figure className="bg-white ml-3 mb-3 p-3 group">
+            <figure key={artwork.id} className="bg-white ml-3 mb-3 p-3 group">
                 <Image
                     className="object-scale-down mx-auto h-72 w-fit relative drop-shadow-2xl"
                     src={artwork.src}
                     width={artwork.width}
                     height={artwork.height}
                     alt={artwork.title}
-                    onClick={showFullScreen(artwork)}
+                    onClick={showFullScreen(artwork)} // showFullScreen returns a lamda
                 />
-                <figcaption className="text-sm w-full hidden relative group-hover:inline truncate">{artwork.title}</figcaption>
+                <figcaption className="text-sm text-center w-[calc(100% - 3rem)] overflow-hidden whitespace-nowrap overflow-ellipsis">{artwork.title}</figcaption>
             </figure>
         )
     });

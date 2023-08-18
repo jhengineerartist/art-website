@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { PT_Serif } from "next/font/google";
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar/navbar";
 
 const font = PT_Serif({
   weight: ["400", "700"],

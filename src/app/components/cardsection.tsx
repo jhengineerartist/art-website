@@ -18,6 +18,7 @@ export default function cardsection() {
 
   return (
     <section className="flex flex-wrap mx-auto h-fit content-stretch justify-center my-4">
+      <h1>Blog</h1>
       {cards}
     </section>
   );
