@@ -15,8 +15,8 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
     <Image src="/artlogo.svg" alt="Art Logo" className="invert" fill priority />
   ) : undefined;
   return (
-    <section id="hero">
-      <div className="flex items-center bg-gradient-to-t from-black to-33 relative w-full h-screen">
+    <section id="hero" className="h-screen">
+      <div className="flex items-center bg-gradient-to-t from-black to-33 relative h-full w-full">
         <Image
           src={heroImage.src}
           blurDataURL={heroImage.blurUrl}

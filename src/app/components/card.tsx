@@ -16,7 +16,7 @@ export default function Card({ blogPost }: Props) {
   })
 
   return (
-    <figure className="flex flex-col min-h-fit bg-white rounded max-w-lg lg:w-2/5 md:w-[40%] sm:w-3/4 m-4 duration-500 hover:scale-105 active:scale-95">
+    <figure className="flex flex-col bg-white rounded overflow-hidden max-w-lg w-full md:w-[40%] lg:w-[calc(100%/3)] m-4 duration-500 hover:scale-105 active:scale-95 flex-grow">
       <Link href={`/posts/${slug}`}>
         <div className="w-full h-96 relative">
           <Image
@@ -26,14 +26,12 @@ export default function Card({ blogPost }: Props) {
             fill
           />
         </div>
-        <figcaption className="flex flex-col h-fit">
-          <div className="px-6 py-4">
+        <figcaption className="flex flex-col p-4 mt-auto">
+          <div>
             <h2 className="font-bold text-xl mb-2">{title}</h2>
-            <p className="text-gray-700 text-base  ">
-              {summary}
-            </p>
+            <p className="text-gray-700 text-base">{summary}</p>
           </div>
-          <div className="px-6 pt-4 pb-2">
+          <div>
             {tagElements}
           </div>
         </figcaption>

@@ -1,15 +1,8 @@
 import React from "react";
 import Card from "./card";
-import ph_graphite from "../../../public/placeholders/graphite1.png";
 import getAllPostsData from "@/lib/mdprovider/placeholderprovider";
 
-const card1Image = {
-  src: ph_graphite,
-  blurUrl: "N78zfI9G9b~AIp-po~V?%2NIIoxt0M%0xZE3xZE3",
-  alt: "Working in my study.",
-};
-
-export default function cardsection() {
+export default function CardSection() {
   const allPosts: BlogPost[] = getAllPostsData();
 
   const cards = allPosts.map((post) => {
@@ -17,9 +10,16 @@ export default function cardsection() {
   });
 
   return (
-    <section className="flex flex-wrap mx-auto h-fit content-stretch justify-center my-4">
-      <h1>Blog</h1>
-      {cards}
+    <section
+      id="blog"
+      className="flex flex-col items-center justify-spread gap-4 mx-auto mt-4 h-screen  section-scroll"
+    >
+      <div className="text-center m-4">
+        <h1 className="text-3xl text-panettone-100">Blog</h1>
+      </div>
+      <div className="flex flex-wrap justify-center gap-4">
+        {cards}
+      </div>
     </section>
   );
 }
