@@ -12,7 +12,7 @@ export default function CardSection() {
   return (
     <section
       id="blog"
-      className="flex flex-col items-center justify-spread gap-4 mx-auto mt-4 h-screen section-scroll"
+      className="flex flex-col items-center justify-spread gap-4 mx-auto h-screen section-scroll"
     >
       <div className="text-center m-4">
         <h1 className="text-3xl text-panettone-100 mb-2">

@@ -17,7 +17,7 @@ export default function Card({ blogPost }: Props) {
 
   return (
     <figure className="flex flex-col bg-white rounded overflow-hidden max-w-lg w-full md:w-[40%] lg:w-[calc(100%/3)] m-4 duration-500 hover:scale-105 active:scale-95 flex-grow">
-      <Link href={`/posts/${slug}`}>
+      <Link href={`/blog/${slug}`}>
         <div className="w-full h-96 relative">
           <Image
             className="object-cover"

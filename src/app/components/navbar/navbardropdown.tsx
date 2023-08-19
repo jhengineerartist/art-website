@@ -19,7 +19,7 @@ export default function NavbarDropdown({ isDropdownOpen, toggleDropdown }: Dropd
             {/* Dropdown Menu */}
             <div className={`absolute bg-enchilada-600 p-2 top-16 right-0 max-w-screen w-[calc(100vw-3rem)] space-y-2 border border-enchilada-800 rounded transform origin-top-right transition-transform duration-300 ${isDropdownOpen ? "block" : "hidden"}`}>
                 {/* Display dropdown options for smaller screens */}
-                <Link href="/#blog" className={dropdownLinkClass}>
+                <Link href="/blog" className={dropdownLinkClass}>
                     Blog
                 </Link>
                 <Link href="/portfolio" className={dropdownLinkClass}>

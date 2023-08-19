@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 export default function NavbarLinks() {
@@ -8,7 +7,7 @@ export default function NavbarLinks() {
     return (
         <div className="hidden sm:flex gap-4" >
             <Link
-                href="/#blog"
+                href="/blog"
                 className={buttonClass}
             >
                 Blog
