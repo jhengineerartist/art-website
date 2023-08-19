@@ -1,12 +1,16 @@
 import Image from "next/image";
 
 export default function AboutPage() {
+    const blockClass = "flex flex-col sm:flex-row max-w-screen-lg mx-auto p-4 bg-panettone-200 rounded-lg mb-4 h-fit"
+    const textDivClass = "p-4 flex-1 text-white text-md flex flex-col justify-center"
+    const imageDivClass = "p-4 flex-1 sm:w-1/2 flex flex-col justify-center"
+
     return (
         <main className="bg-panettone-300">
-            <div className="py-8">
-                <div className="flex max-w-screen-lg mx-auto min-h-screen p-8 bg-panettone-200 rounded-lg">
+            <div className="py-4 min-h-screen">
+                <div className={blockClass}>
                     {/* Portrait */}
-                    <div className="w-1/2 p-8">
+                    <div className={imageDivClass}>
                         <Image
                             className="rounded-full drop-shadow-xl"
                             src="/jose_square_portrait.jpg"
@@ -15,8 +19,7 @@ export default function AboutPage() {
                             height={4130}
                         />
                     </div>
-                    {/* Text */}
-                    <div className="w-1/2 text-white text-md">
+                    <div className={textDivClass}>
                         <p className="mb-4">
                             I'm a Seattle based artist excited to give you a
                             glimpse into my creative journey.
@@ -32,6 +35,10 @@ export default function AboutPage() {
                             organized, nondestructive ways.  These are essential skills I brought out of my technical and
                             educational background.
                         </p>
+                    </div>
+                </div>
+                <div className={blockClass}>
+                    <div className={textDivClass}>
                         <p className="mb-4">
                             In 2019, I decided to pursue my dream of studying fine arts with a focus in drawing and oil painting.
                             When the pandemic hit, I took online illustration classes at the Gage Academy here in Seattle with the
@@ -44,6 +51,30 @@ export default function AboutPage() {
                             to build my creative voice.  I'm interested in telling stories of inspirational figures through portraiture and
                             imaginative realist compositions.
                         </p>
+                    </div>
+                    {/* Cast Drawing */}
+                    <div className={imageDivClass}>
+                        <Image
+                            className="drop-shadow-xl"
+                            src="/artwork/cast_project.jpg"
+                            alt="My Portrait"
+                            width={2229}
+                            height={3117}
+                        />
+                    </div>
+                </div>
+                <div className={blockClass}>
+                    {/* Plein Air */}
+                    <div className={imageDivClass}>
+                        <Image
+                            className="drop-shadow-xl"
+                            src="/artwork/pa_magnuson_8-06-23.jpg"
+                            alt="My Portrait"
+                            width={3619}
+                            height={2612}
+                        />
+                    </div>
+                    <div className={textDivClass}>
                         <p className="mb-4">
                             I'm also building a body of outdoor plein air landscape artwork, partly to celebrate the beauty of the Northwest,
                             and partly because I just really enjoy being outdoors and creating artwork wherever I find myself.
@@ -57,6 +88,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </div>
-        </main>
+        </main >
     );
 }

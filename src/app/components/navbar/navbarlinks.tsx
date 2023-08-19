@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NavbarLinks() {
 
-    const buttonClass = "no-underline text-white hover:bg-enchilada-900 hover:border-enchilada-900 hover:rounded-lg px-2 py-1 transition-all duration-300"
+    const buttonClass = "no-underline text-white lg:text-lg md:text-md sm:text-sm hover:bg-enchilada-900 hover:border-enchilada-900 hover:rounded-lg px-2 py-1 transition-all duration-300"
 
     return (
         <div className="hidden sm:flex gap-4" >
@@ -23,7 +23,7 @@ export default function NavbarLinks() {
                 href="/about"
                 className={buttonClass}
             >
-                About Me
+                About
             </Link>
             <Link
                 href="/resume"
