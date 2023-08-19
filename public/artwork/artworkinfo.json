@@ -2,7 +2,7 @@
     "artwork": [
         {
             "id": 0,
-            "src": "cast_project.png",
+            "src": "cast_project.jpg",
             "height": 3117,
             "width": 2229,
             "title": "Caesar Cast Final Project, Charcoal, 30\"x22\"",
@@ -22,7 +22,7 @@
         },
         {
             "id": 1,
-            "src": "charcoal_nude.png",
+            "src": "charcoal_nude.jpg",
             "height": 2072,
             "width": 3141,
             "title": "Graceful Repose, Charcoal, 14\"x22\"",
@@ -42,7 +42,7 @@
         },
         {
             "id": 2,
-            "src": "monochrome_nude.png",
+            "src": "monochrome_nude.jpg",
             "height": 2368,
             "width": 3168,
             "title": "Female Figure, Oil on Archival Panel, 22\"x18\"",
@@ -62,7 +62,7 @@
         },
         {
             "id": 3,
-            "src": "still_life_1.png",
+            "src": "still_life_1.jpg",
             "height": 2333,
             "width": 2080,
             "title": "Still Life, Charcoal, 18\"x20\"",
@@ -82,7 +82,7 @@
         },
         {
             "id": 4,
-            "src": "plein_air1.png",
+            "src": "plein_air1.jpg",
             "height": 2572,
             "width": 1832,
             "title": "Plein Air, Howel Beach, June 2023, 18\"x20\"",
@@ -100,7 +100,7 @@
         },
         {
             "id": 5,
-            "src": "plein_air2.png",
+            "src": "plein_air2.jpg",
             "height": 2333,
             "width": 2080,
             "title": "Plein Air, Columbia City, July 2023, 9\"x12\"",
@@ -118,7 +118,7 @@
         },
         {
             "id": 6,
-            "src": "pear_study.png",
+            "src": "pear_study.jpg",
             "height": 1010,
             "width": 738,
             "title": "Pear Study, 10\"x14\"",

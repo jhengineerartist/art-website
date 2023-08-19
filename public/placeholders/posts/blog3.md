@@ -1,7 +1,7 @@
 ---
 title: Graphite Portraiture
 summary: Moving to graphite after working with charcoal can feel liberating. As a material you have quick access to so many different hardnesses and lead holders make sharpening a breeze...
-heroimage: /placeholders/graphite1.png
+heroimage: /artwork/still_life_1.jpg
 date: 2023-07-19T00:00:00Z
 tags: graphite,drawing,portraits,value,social-media
 ---

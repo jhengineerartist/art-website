@@ -1,7 +1,7 @@
 ---
 title: Studying At Georgetown
 summary: Have you ever considered attending an atelier program? I studied imaginative realism at Georgetown Atelier. My thoughts on the atlier experience...
-heroimage: /placeholders/painting-monochrome.png
+heroimage: /artwork/cast_project.jpg
 date: 2023-07-19T00:00:00Z
 tags: atelier,painting,figure,critiques,studies
 ---

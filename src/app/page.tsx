@@ -1,6 +1,6 @@
 import HeroSection from "./components/herosection";
 import CardSection from "./components/cardsection";
-import herostudy from "../../public/placeholders/hero-study.png";
+import herostudy from "../../public/placeholders/hero-study.jpg";
 
 export default function Home() {
   const heroImage = {

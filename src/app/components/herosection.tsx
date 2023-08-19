@@ -4,7 +4,6 @@ import Image, { StaticImageData } from "next/image";
 type Props = {
   heroImage: {
     src: StaticImageData;
-    blurUrl: string;
     alt: string;
   };
   heroLogo?: boolean;
@@ -19,7 +18,6 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
       <div className="flex items-center bg-gradient-to-t from-black to-33 relative h-full w-full">
         <Image
           src={heroImage.src}
-          blurDataURL={heroImage.blurUrl}
           alt={heroImage.alt}
           className="stick object-cover z-0 mix-blend-overlay"
           fill

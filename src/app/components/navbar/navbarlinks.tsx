@@ -20,6 +20,12 @@ export default function NavbarLinks() {
                 Portfolio
             </Link>
             <Link
+                href="/about"
+                className={buttonClass}
+            >
+                About Me
+            </Link>
+            <Link
                 href="/resume"
                 className={buttonClass}
             >
