@@ -15,7 +15,12 @@ export default function CardSection() {
       className="flex flex-col items-center justify-spread gap-4 mx-auto mt-4 h-screen section-scroll"
     >
       <div className="text-center m-4">
-        <h1 className="text-3xl text-panettone-100">Blog</h1>
+        <h1 className="text-3xl text-panettone-100 mb-2">
+          Blog
+        </h1>
+        <p className="text-panettone-100">
+          Explore my latest blog posts and musings.
+        </p>
       </div>
       <div className="flex flex-wrap justify-center gap-4">
         {cards}

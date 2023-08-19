@@ -1,6 +1,5 @@
 import getAllArtData from "@/lib/artprovider/artworkprovider"
-import Image from "next/image";
-import PortfolioView from "./components/PortfolioView";
+import PortfolioView from "./components/portfolioview";
 
 export default function PortfolioPage() {
     const artworkData: ArtworkInfo[] = getAllArtData();

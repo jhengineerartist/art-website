@@ -12,7 +12,7 @@ function SocialMedia({ placement }: SocialMediaProps) {
     const buttonClass = placement === "footer" ? `${rootButtonClass} text-xl` : `${rootButtonClass} text-3xl`;
 
     return (
-        <div className={`${placement === "navbar" ? "hidden" : "flex sm:flex-row gap-2"} sm:flex gap-2`}>
+        <div className={`${placement === "navbar" ? "hidden sm:flex" : "flex"} gap-2`}>
             <Link
                 className={buttonClass}
                 href="https://github.com/jhengineerartist"
