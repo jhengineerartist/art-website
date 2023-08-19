@@ -2,16 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add scroll margins for ids that have corresponding links */
-#blog {
-    scroll-margin-top: 100px;
-}
-
 /* Inside your CSS or component's style block */
 .section-scroll {
-    /* Set a fixed height and add overflow-y-scroll to enable scrolling */
-    height: calc(100vh - 64px);
-    /* Adjust the value to account for header/footer heights */
     overflow-y: scroll;
 }
 
