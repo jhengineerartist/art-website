@@ -1,31 +1,32 @@
 'use client'
 import Image from "next/image";
-import { useState } from "react";
 import { FullScreenImage, useFullScreenImage } from "@/app/components/fullscreenimage";
 
-
 type Params = {
-    artworkData: ArtworkInfo[]
-}
+    artworkData: ArtworkInfo[];
+};
 
 export default function PortfolioView({ artworkData }: Params) {
-
     const [fullScrImage, showFullScreen, hideFullScreen] = useFullScreenImage();
 
-    const images = artworkData.map(artwork => {
+    const images = artworkData.map((artwork) => {
         return (
-            <figure key={artwork.id} className="bg-white ml-3 mb-3 p-3 group">
-                <Image
-                    className="object-scale-down mx-auto h-72 w-fit relative drop-shadow-2xl"
-                    src={artwork.src}
-                    width={artwork.width}
-                    height={artwork.height}
-                    alt={artwork.title}
-                    onClick={showFullScreen(artwork)} // showFullScreen returns a lamda
-                />
-                <figcaption className="text-sm text-center w-[calc(100% - 3rem)] overflow-hidden whitespace-nowrap overflow-ellipsis">{artwork.title}</figcaption>
-            </figure>
-        )
+            <div className="ml-3 mb-3 group cursor-pointer" onClick={showFullScreen(artwork)}>
+                <figure className="flex flex-col items-center bg-panettone-100">
+                    <Image
+                        className="object-scale-down h-72 w-auto border-8 border-transparent drop-shadow-xl"
+                        src={artwork.src}
+                        width={artwork.width}
+                        height={artwork.height}
+                        alt={artwork.title}
+                    />
+                    <figcaption className="text-sm text-center bg-panettone-100 overflow-hidden whitespace-nowrap overflow-ellipsis w-full p-2">
+                        {artwork.title}
+                    </figcaption>
+                </figure>
+            </div>
+
+        );
     });
 
     return (
@@ -35,5 +36,6 @@ export default function PortfolioView({ artworkData }: Params) {
                 {images}
             </div>
             <FullScreenImage {...{ state: fullScrImage, hideFullScreen: hideFullScreen }} />
-        </div>)
+        </div>
+    );
 }
