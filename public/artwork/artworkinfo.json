@@ -43,8 +43,8 @@
         {
             "id": 2,
             "src": "monochrome_nude.jpg",
-            "height": 2368,
-            "width": 3168,
+            "height": 3168,
+            "width": 2368,
             "title": "Female Figure, Oil on Archival Panel, 22\"x18\"",
             "caption": "I developed oil paint handling, archival panels preparation, and controlling mediums in my second year of formal Atelier training. This painting was a three week life room figure painting. I continued to develop my understanding of anatomy from the live models during life room sessions in my second year of atelier training. This was one of the first oil paintings where I was able to fully synthesize the anatomical and value hierarchy lessons from the first year together with the novel paint handling skills I developed in the second year of atelier training. ",
             "date": "2023-02-17T00:00:00Z",
@@ -63,8 +63,8 @@
         {
             "id": 3,
             "src": "still_life_1.jpg",
-            "height": 2333,
-            "width": 2080,
+            "height": 2080,
+            "width": 2333,
             "title": "Still Life, Charcoal, 18\"x20\"",
             "caption": "During the second year of atelier I worked to develop my understanding of rendering other materials, and enhancing my understanding of value and composition. This still life represents the development of these skills in value, anatomy, blockin, and composition from the first year to the second year of atelier training.",
             "date": "2023-04-07T00:00:00Z",
@@ -83,8 +83,8 @@
         {
             "id": 4,
             "src": "plein_air1.jpg",
-            "height": 2572,
-            "width": 1832,
+            "height": 1832,
+            "width": 2572,
             "title": "Plein Air, Howel Beach, June 2023, 18\"x20\"",
             "caption": "I'll look for any opportunity to enjoy an afternoon of painting on the beach. Beer in hand, brush in the other, it's a great way to have good conversation, a cold drink, and a project to work on.",
             "date": "2023-06-21T00:00:00Z",
@@ -101,8 +101,8 @@
         {
             "id": 5,
             "src": "plein_air2.jpg",
-            "height": 2333,
-            "width": 2080,
+            "height": 1859,
+            "width": 2508,
             "title": "Plein Air, Columbia City, July 2023, 9\"x12\"",
             "caption": "My friend invited us over for an amazing evening of painting on her porch in Columbia City in Seattle. We had a great evening listening to music and painting together as a group.",
             "date": "2023-07-19T00:00:00Z",
@@ -119,8 +119,8 @@
         {
             "id": 6,
             "src": "pearstudy.jpg",
-            "height": 1010,
-            "width": 738,
+            "height": 738,
+            "width": 1010,
             "title": "Pear Study, 10\"x14\"",
             "caption": "One of my earliest finished realist studies. I completed this pear study in the first half of the first year of my atelier studies.  The class is assigned the pear project because it is a slightly irregular shapet that still tests the student's capacity to turn form and render delicate value transitions.",
             "date": "2021-12-10T00:00:00Z",
@@ -132,6 +132,24 @@
                 "Study",
                 "Drawing",
                 "Pear"
+            ]
+        },
+        {
+            "id": 7,
+            "src": "pa_magnuson_8-06-23.jpg",
+            "height": 2612,
+            "width": 3619,
+            "title": "Magnuson Park, 9\"x12\"",
+            "caption": "I attended a workshop hosted by artist Riley Doyle in Magnuson Park here in seattle where I feel like I really made a big jump in my understanding of material handling - especially in building soft edges in an impressionistic style.",
+            "date": "2023-08-06T00:00:00Z",
+            "class": "PleinAir",
+            "related": [],
+            "tags": [
+                "Plein Air",
+                "Painting",
+                "Seattle",
+                "Oil",
+                "Summer"
             ]
         }
     ]

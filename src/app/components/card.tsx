@@ -29,7 +29,7 @@ export default function Card({ blogPost }: Props) {
         <figcaption className="flex flex-col p-4 mt-auto">
           <div>
             <h2 className="font-bold text-xl mb-2">{title}</h2>
-            <p className="text-gray-700 text-base">{summary}</p>
+            <p className="text-gray-700 text-base mb-2">{summary}</p>
           </div>
           <div>
             {tagElements}

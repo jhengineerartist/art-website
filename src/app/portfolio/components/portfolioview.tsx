@@ -23,7 +23,7 @@ export default function PortfolioView({ artworkData }: Params) {
                         alt={artwork.title}
                         blurDataURL={artwork.lowResSrc}
                         placeholder="blur"
-                        loading="lazy"
+                        loading="eager"
                     />
                     <figcaption className="text-sm text-center bg-panettone-100 overflow-hidden whitespace-nowrap overflow-ellipsis w-full p-2">
                         {artwork.title}

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -27,6 +27,7 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
           alt={heroImage.alt}
           className="stick object-cover z-0 mix-blend-overlay"
           fill
+          placeholder="blur"
           quality={100}
         />
         <div className="flex flex-col relative my-auto text-white text-center z-1">

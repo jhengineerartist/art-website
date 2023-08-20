@@ -1,11 +1,22 @@
 import Image from "next/image";
+import { generateLowResImage } from "@/lib/utils/imageutils";
+import fs from "fs";
+import path from "path";
 
-export default function AboutPage() {
+const root = process.cwd();
+
+export default async function AboutPage() {
     const blockClass = "flex flex-col sm:flex-row max-w-screen-lg mx-auto p-4 bg-panettone-200 rounded-lg mb-4 h-fit"
     const textDivClass = "p-4 flex-1 text-white text-md flex flex-col justify-center"
     const imageDivClass = "m-4 flex-1 sm:w-1/2 flex flex-col justify-center"
-
     const firstLetterClass = "first-letter:text-7xl first-letter:font-bold first-letter:mr-3  first-letter:float-left"
+
+    // Generate the low res placeholder profile picture
+    const pfp = "/jose_square_portrait.jpg"
+    const lowResPfp = "/lowres/jose_square_portrait.jpg"
+    if (!fs.existsSync(lowResPfp))
+        await generateLowResImage(path.join(root, "public", pfp), path.join(root, "public", lowResPfp), 64, 64)
+
 
     return (
         <main className="bg-panettone-300">
@@ -15,10 +26,12 @@ export default function AboutPage() {
                     <div className={imageDivClass}>
                         <Image
                             className="rounded-full drop-shadow-xl"
-                            src="/jose_square_portrait.jpg"
+                            src={pfp}
                             alt="My Portrait"
                             width={4130}
                             height={4130}
+                            blurDataURL={lowResPfp}
+                            placeholder="blur"
                         />
                     </div>
                     <div className={textDivClass}>
@@ -58,6 +71,8 @@ export default function AboutPage() {
                             alt="My Portrait"
                             width={2229}
                             height={3117}
+                            blurDataURL="/lowres/cast_project.jpg"
+                            placeholder="blur"
                         />
                     </div>
                 </div>
@@ -70,6 +85,8 @@ export default function AboutPage() {
                             alt="My Portrait"
                             width={3619}
                             height={2612}
+                            blurDataURL="/lowres/pa_magnuson_8-06-23.jpg"
+                            placeholder="blur"
                         />
                     </div>
                     <div className={textDivClass}>

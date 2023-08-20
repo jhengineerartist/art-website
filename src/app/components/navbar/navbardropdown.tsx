@@ -13,7 +13,7 @@ export default function NavbarDropdown({ isDropdownOpen, toggleDropdown }: Dropd
     return (
         <div className="sm:hidden relative">
             {/* Hamburger Icon */}
-            <button className="no-underline text-white hover:bg-enchilada-900 hover:border-enchilada-900 hover:rounded-lg px-2 py-1 transition-all duration-300" onClick={toggleDropdown}>
+            <button aria-label="Dropdown Site Menu" className="no-underline text-white hover:bg-enchilada-900 hover:border-enchilada-900 hover:rounded-lg px-2 py-1 transition-all duration-300" onClick={toggleDropdown}>
                 <FaBars className="text-white text-2xl transition-colors duration-300" />
             </button>
             {/* Dropdown Menu */}
