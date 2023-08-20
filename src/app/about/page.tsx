@@ -27,8 +27,8 @@ export default function AboutPage() {
                             I graduated from Cornell University in 2014 with a degree in Computer Science. On graduating I
                             immediately began my career as an engineer at Microsoft where I stayed from 2014 to 2019. The
                             technical and analyitcal skills I developed as an engineer continue to help motivate my
-                            analyitcal process when developing my paintings and drawings.  I'm constantly thinking
-                            in terms of building a hierarchy of value, color, and edges.  I'm also generally thinking
+                            analyitcal process when developing my paintings and drawings.  I&apos;m constantly thinking
+                            in terms of building a hierarchy of value, color, and edges.  I&apos;m also generally thinking
                             in terms of process and how to build a workflow that enables me to solve problems in
                             organized, nondestructive ways.  These are essential skills I brought out of my technical and
                             educational background.
@@ -45,8 +45,8 @@ export default function AboutPage() {
                             Imaginative Realism was the right pick for me.
                         </p>
                         <p className="mb-4 leading-8">
-                            As I complete my Atelier training in 2023 and begin building my portfolio pieces in color and charcoal, I'm beginning
-                            to build my creative voice.  I'm interested in telling stories of inspirational figures through portraiture and
+                            As I complete my Atelier training in 2023 and begin building my portfolio pieces in color and charcoal, I&apos;m beginning
+                            to build my creative voice.  I&apos;m interested in telling stories of inspirational figures through portraiture and
                             imaginative realist compositions.
                         </p>
                     </div>
@@ -74,14 +74,14 @@ export default function AboutPage() {
                     </div>
                     <div className={textDivClass}>
                         <p className={`mb-4 leading-8 ${firstLetterClass}`}>
-                            Landscape artwork is another major area I'll be investing my time into, partly to celebrate the beauty of the Northwest,
+                            Landscape artwork is another major area I&apos;ll be investing my time into, partly to celebrate the beauty of the Northwest,
                             and partly because I just really enjoy being outdoors and creating artwork wherever I find myself.
                         </p>
                         <p className="mb-4 leading-8">
                             Finally, I remain a passionate engineer, and I seek to build new software projects and grow my technical skills.
-                            I'm currently building a portfolio of technical projects, starting with this very website which I built in NextJS.
-                            I'm always looking for projects that give me an excuse to try out new technologies, as well as refine my understanding of
-                            the patterns and practices I'm already familiar with.
+                            I&apos;m currently building a portfolio of technical projects, starting with this very website which I built in NextJS.
+                            I&apos;m always looking for projects that give me an excuse to try out new technologies, as well as refine my understanding of
+                            the patterns and practices I&apos;m already familiar with.
                         </p>
                     </div>
                 </div>

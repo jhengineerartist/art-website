@@ -45,7 +45,8 @@ export default function PostView({ postData }: Params) {
                                 date: "",
                                 class: "GalleryPiece",
                                 related: [],
-                                tags: []
+                                tags: [],
+                                lowResSrc: ""
                             })}
                         />
                     </div>)
@@ -70,7 +71,9 @@ export default function PostView({ postData }: Params) {
                         fill
                     />
                 </figure>
-                <ReactMarkdown children={content} components={markdownComponents} />
+                <ReactMarkdown components={markdownComponents} >
+                    {content}
+                </ReactMarkdown>
             </div>
             <FullScreenImage {...{ state: fullScrImage, hideFullScreen: hideFullScreen }} />
         </article >

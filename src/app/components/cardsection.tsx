@@ -6,7 +6,7 @@ export default function CardSection() {
   const allPosts: BlogPost[] = getAllPostsData();
 
   const cards = allPosts.map((post) => {
-    return <Card blogPost={post} />;
+    return <Card key={post.slug} blogPost={post} />;
   });
 
   return (

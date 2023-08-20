@@ -23,7 +23,8 @@ export function useFullScreenImage(): [[ArtworkInfo, boolean], (a0: ArtworkInfo)
         date: "",
         class: "GalleryPiece",
         related: [],
-        tags: []
+        tags: [],
+        lowResSrc: ""
     },
         false]);
 
@@ -42,7 +43,7 @@ export function useFullScreenImage(): [[ArtworkInfo, boolean], (a0: ArtworkInfo)
 
 export function FullScreenImage(params: Params) {
     const { state, hideFullScreen: setHidden } = params;
-    const [{ src, width, height, caption, title, date }, isFullScreen] = state;
+    const [{ src, width, height, caption, title, date, lowResSrc }, isFullScreen] = state;
     console.log(width)
     const closeRef = useRef<HTMLElement>(null);
 
@@ -61,7 +62,7 @@ export function FullScreenImage(params: Params) {
         return () => {
             document.removeEventListener('click', handleClickOutside, true);
         };
-    }, [closeRef]);
+    }, [closeRef, setHidden]);
 
     const localDate = new Date(date)
     const formattedDate = localDate.toLocaleString("en-US", {
@@ -85,6 +86,9 @@ export function FullScreenImage(params: Params) {
                         alt={caption}
                         width={width}
                         height={height}
+                        blurDataURL={lowResSrc}
+                        placeholder="blur"
+                        loading="lazy"
                     />
                     <figcaption className="max-h-1/5 p-4 mb-3 min-h-32 section-scroll relative">
                         {caption}

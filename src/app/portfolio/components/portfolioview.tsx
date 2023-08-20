@@ -1,6 +1,8 @@
 'use client'
 import Image from "next/image";
 import { FullScreenImage, useFullScreenImage } from "@/app/components/fullscreenimage";
+import type { GetStaticProps } from 'next'
+import getAllArtData from "@/lib/artprovider/artworkprovider";
 
 type Params = {
     artworkData: ArtworkInfo[];
@@ -11,7 +13,7 @@ export default function PortfolioView({ artworkData }: Params) {
 
     const images = artworkData.map((artwork) => {
         return (
-            <div className="ml-3 mb-3 group cursor-pointer" onClick={showFullScreen(artwork)}>
+            <div key={artwork.id} className="ml-3 mb-3 group cursor-pointer" onClick={showFullScreen(artwork)}>
                 <figure className="flex flex-col items-center bg-panettone-100">
                     <Image
                         className="object-scale-down h-72 w-auto border-8 border-transparent drop-shadow-xl"
@@ -19,6 +21,9 @@ export default function PortfolioView({ artworkData }: Params) {
                         width={artwork.width}
                         height={artwork.height}
                         alt={artwork.title}
+                        blurDataURL={artwork.lowResSrc}
+                        placeholder="blur"
+                        loading="lazy"
                     />
                     <figcaption className="text-sm text-center bg-panettone-100 overflow-hidden whitespace-nowrap overflow-ellipsis w-full p-2">
                         {artwork.title}

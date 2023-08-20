@@ -10,7 +10,7 @@ export default function Card({ blogPost }: Props) {
 
   const tagElements = tags.map(tag => {
     return (
-      <span className="inline-block bg-enchilada-200 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+      <span key={tag} className="inline-block bg-enchilada-200 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
         #{tag}
       </span>)
   })

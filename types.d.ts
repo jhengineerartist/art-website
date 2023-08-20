@@ -26,4 +26,5 @@ type ArtworkInfo = {
   date: string,
   related: number[]
   tags: string[]
+  lowResSrc: string
 }
