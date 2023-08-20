@@ -2,7 +2,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { FaArrowDown } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import { scrollToSection } from "@/lib/utils/uxbehaviors";
 
 type Props = {
@@ -17,10 +17,6 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
   const logo = heroLogo ? (
     <Image src="/artlogo.svg" alt="Art Logo" className="invert" fill priority />
   ) : undefined;
-
-  const subtleBounce = {
-    animation: "bounce 3.5s infinite"
-  };
 
   return (
     <section id="hero" className="h-screen" >
@@ -46,11 +42,10 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
 
         </div>
         <div
-          className="cursor-pointer animate-bounce mx-auto mt-auto mb-24 text-white text-6xl"
-          style={subtleBounce}
+          className="cursor-pointer relative w-full mt-auto pt-12 sm:pt-24 mb-24 text-white text-6xl"
           onClick={() => scrollToSection("blog")}
         >
-          <FaArrowDown />
+          <FaChevronDown className="mx-auto" />
         </div>
       </div>
     </section>
