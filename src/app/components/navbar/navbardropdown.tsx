@@ -28,7 +28,7 @@ export default function NavbarDropdown({ isDropdownOpen, toggleDropdown }: Dropd
                 <Link href="/about" className={dropdownLinkClass}>
                     About Me
                 </Link>
-                <Link href="/resume" className={dropdownLinkClass}>
+                <Link href="https://resume.io/r/HKNuTy6hx" className={dropdownLinkClass}>
                     Resume
                 </Link>
             </div>

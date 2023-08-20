@@ -25,7 +25,7 @@ export default function NavbarLinks() {
                 About
             </Link>
             <Link
-                href="/resume"
+                href="https://resume.io/r/HKNuTy6hx"
                 className={buttonClass}
             >
                 Resume
