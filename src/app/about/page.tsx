@@ -1,9 +1,6 @@
 import Image from "next/image";
-import { generateLowResImage } from "@/lib/utils/imageutils";
-import fs from "fs";
-import path from "path";
-
-const root = process.cwd();
+import { getArtworkById } from "@/lib/providers/artworkprovider";
+import { getProfilePicture } from "@/lib/providers/photoprovider";
 
 export default async function AboutPage() {
     const blockClass = "flex flex-col sm:flex-row max-w-screen-lg mx-auto p-4 bg-panettone-200 rounded-lg mb-4 h-fit"
@@ -11,12 +8,10 @@ export default async function AboutPage() {
     const imageDivClass = "m-4 flex-1 sm:w-1/2 flex flex-col justify-center"
     const firstLetterClass = "first-letter:text-7xl first-letter:font-bold first-letter:mr-3  first-letter:float-left"
 
-    // Generate the low res placeholder profile picture
-    const pfp = "/jose_square_portrait.jpg"
-    const lowResPfp = "/lowres/jose_square_portrait.jpg"
-    if (!fs.existsSync(lowResPfp))
-        await generateLowResImage(path.join(root, "public", pfp), path.join(root, "public", lowResPfp), 64, 64)
+    const pfpData = await getProfilePicture();
 
+    const castProj = await getArtworkById(0) as ArtworkInfo // Id of cast project
+    const landscape = await getArtworkById(7) as ArtworkInfo // Id of plein air
 
     return (
         <main className="bg-panettone-300">
@@ -26,11 +21,11 @@ export default async function AboutPage() {
                     <div className={imageDivClass}>
                         <Image
                             className="rounded-full drop-shadow-xl"
-                            src={pfp}
+                            src={pfpData.src}
                             alt="My Portrait"
-                            width={4130}
-                            height={4130}
-                            blurDataURL={lowResPfp}
+                            width={pfpData.width}
+                            height={pfpData.height}
+                            blurDataURL={pfpData.lowResSrc}
                             placeholder="blur"
                         />
                     </div>
@@ -67,11 +62,11 @@ export default async function AboutPage() {
                     <div className={imageDivClass}>
                         <Image
                             className="drop-shadow-xl border-8 border-slate-800"
-                            src="/artwork/cast_project.jpg"
-                            alt="My Portrait"
-                            width={2229}
-                            height={3117}
-                            blurDataURL="/lowres/cast_project.jpg"
+                            src={castProj.data.src}
+                            alt={castProj.title}
+                            width={castProj.data.width}
+                            height={castProj.data.height}
+                            blurDataURL={castProj.data.lowResSrc}
                             placeholder="blur"
                         />
                     </div>
@@ -81,11 +76,11 @@ export default async function AboutPage() {
                     <div className={imageDivClass}>
                         <Image
                             className="drop-shadow-xl border-8 border-slate-800"
-                            src="/artwork/pa_magnuson_8-06-23.jpg"
-                            alt="My Portrait"
-                            width={3619}
-                            height={2612}
-                            blurDataURL="/lowres/pa_magnuson_8-06-23.jpg"
+                            src={landscape.data.src}
+                            alt={landscape.title}
+                            width={landscape.data.width}
+                            height={landscape.data.height}
+                            blurDataURL={landscape.data.lowResSrc}
                             placeholder="blur"
                         />
                     </div>

@@ -2,9 +2,12 @@
     "artwork": [
         {
             "id": 0,
-            "src": "cast_project.jpg",
-            "height": 3117,
-            "width": 2229,
+            "data": {
+                "src": "cast_project.jpg",
+                "height": 3117,
+                "width": 2229,
+                "lowResSrc": ""
+            },
             "title": "Caesar Cast Final Project, Charcoal, 30\"x22\"",
             "caption": "The charcoal rendering of the Caesar Bust was the capstone project for my first year at The Georgetown Atelier.  This project saw me develop a professional understanding of value hierarchy and the turning of form.  The cast rendering assignment is steeped in the tradition of the atelier system dating back to at least the 19th century and it is a testament to the artist's diligence and patience as these assignments can routinely take over a month to realize. I was expected to pour over every small detail until I realized the final form in an optical and aesthetic perfection.",
             "date": "2022-06-03T00:00:00Z",
@@ -22,9 +25,12 @@
         },
         {
             "id": 1,
-            "src": "charcoal_nude.jpg",
-            "height": 2072,
-            "width": 3141,
+            "data": {
+                "src": "charcoal_nude.jpg",
+                "height": 2072,
+                "width": 3141,
+                "lowResSrc": ""
+            },
             "title": "Graceful Repose, Charcoal, 14\"x22\"",
             "caption": "At the atelier, we spend the mornings studying from the live nude model. I consider this piece a watershed moment for me.  After months of training my skills, I was able to construct the figure and turn the form with the careful application of compressed charcoal until an artistic vision of the model emerged and each granule of charcoal felt thoughtful and considered.",
             "date": "2022-05-20T00:00:00Z",
@@ -42,9 +48,12 @@
         },
         {
             "id": 2,
-            "src": "monochrome_nude.jpg",
-            "height": 3168,
-            "width": 2368,
+            "data": {
+                "src": "monochrome_nude.jpg",
+                "height": 3168,
+                "width": 2368,
+                "lowResSrc": ""
+            },
             "title": "Female Figure, Oil on Archival Panel, 22\"x18\"",
             "caption": "I developed oil paint handling, archival panels preparation, and controlling mediums in my second year of formal Atelier training. This painting was a three week life room figure painting. I continued to develop my understanding of anatomy from the live models during life room sessions in my second year of atelier training. This was one of the first oil paintings where I was able to fully synthesize the anatomical and value hierarchy lessons from the first year together with the novel paint handling skills I developed in the second year of atelier training. ",
             "date": "2023-02-17T00:00:00Z",
@@ -62,9 +71,12 @@
         },
         {
             "id": 3,
-            "src": "still_life_1.jpg",
-            "height": 2080,
-            "width": 2333,
+            "data": {
+                "src": "still_life_1.jpg",
+                "height": 2080,
+                "width": 2333,
+                "lowResSrc": ""
+            },
             "title": "Still Life, Charcoal, 18\"x20\"",
             "caption": "During the second year of atelier I worked to develop my understanding of rendering other materials, and enhancing my understanding of value and composition. This still life represents the development of these skills in value, anatomy, blockin, and composition from the first year to the second year of atelier training.",
             "date": "2023-04-07T00:00:00Z",
@@ -82,9 +94,12 @@
         },
         {
             "id": 4,
-            "src": "plein_air1.jpg",
-            "height": 1832,
-            "width": 2572,
+            "data": {
+                "src": "plein_air1.jpg",
+                "height": 1832,
+                "width": 2572,
+                "lowResSrc": ""
+            },
             "title": "Plein Air, Howel Beach, June 2023, 18\"x20\"",
             "caption": "I'll look for any opportunity to enjoy an afternoon of painting on the beach. Beer in hand, brush in the other, it's a great way to have good conversation, a cold drink, and a project to work on.",
             "date": "2023-06-21T00:00:00Z",
@@ -100,9 +115,12 @@
         },
         {
             "id": 5,
-            "src": "plein_air2.jpg",
-            "height": 1859,
-            "width": 2508,
+            "data": {
+                "src": "plein_air2.jpg",
+                "height": 1859,
+                "width": 2508,
+                "lowResSrc": ""
+            },
             "title": "Plein Air, Columbia City, July 2023, 9\"x12\"",
             "caption": "My friend invited us over for an amazing evening of painting on her porch in Columbia City in Seattle. We had a great evening listening to music and painting together as a group.",
             "date": "2023-07-19T00:00:00Z",
@@ -118,9 +136,12 @@
         },
         {
             "id": 6,
-            "src": "pearstudy.jpg",
-            "height": 738,
-            "width": 1010,
+            "data": {
+                "src": "pearstudy.jpg",
+                "height": 738,
+                "width": 1010,
+                "lowResSrc": ""
+            },
             "title": "Pear Study, 10\"x14\"",
             "caption": "One of my earliest finished realist studies. I completed this pear study in the first half of the first year of my atelier studies.  The class is assigned the pear project because it is a slightly irregular shapet that still tests the student's capacity to turn form and render delicate value transitions.",
             "date": "2021-12-10T00:00:00Z",
@@ -136,9 +157,12 @@
         },
         {
             "id": 7,
-            "src": "pa_magnuson_8-06-23.jpg",
-            "height": 2612,
-            "width": 3619,
+            "data": {
+                "src": "pa_magnuson_8-06-23.jpg",
+                "height": 2612,
+                "width": 3619,
+                "lowResSrc": ""
+            },
             "title": "Magnuson Park, 9\"x12\"",
             "caption": "I attended a workshop hosted by artist Riley Doyle in Magnuson Park here in seattle where I feel like I really made a big jump in my understanding of material handling - especially in building soft edges in an impressionistic style.",
             "date": "2023-08-06T00:00:00Z",

@@ -38,15 +38,12 @@ export default function PostView({ postData }: Params) {
                             onClick={showFullScreen({
                                 id: 0,
                                 title,
-                                src: image.properties.src,
-                                width,
-                                height,
+                                data: { src: image.properties.src, width, height, lowResSrc: image.properties.src },
                                 caption,
                                 date: "",
                                 class: "GalleryPiece",
                                 related: [],
-                                tags: [],
-                                lowResSrc: ""
+                                tags: []
                             })}
                         />
                     </div>)

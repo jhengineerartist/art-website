@@ -1,4 +1,4 @@
-import getAllArtData from "@/lib/artprovider/artworkprovider"
+import { getAllArtData } from "@/lib/providers/artworkprovider"
 import PortfolioView from "./components/portfolioview";
 
 

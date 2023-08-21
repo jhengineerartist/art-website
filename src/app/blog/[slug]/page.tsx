@@ -1,4 +1,4 @@
-import { getBlogDataBySlug } from "@/lib/mdprovider/placeholderprovider";
+import { getBlogDataBySlug } from "@/lib/providers/placeholderprovider";
 import PostView from "./components/postview";
 
 export default function BlogPage({ params }: { params: { slug: string } }) {

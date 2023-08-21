@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { FullScreenImage, useFullScreenImage } from "@/app/components/fullscreenimage";
 import type { GetStaticProps } from 'next'
-import getAllArtData from "@/lib/artprovider/artworkprovider";
+import { getAllArtData } from "@/lib/providers/artworkprovider";
 
 type Params = {
     artworkData: ArtworkInfo[];
@@ -17,11 +17,11 @@ export default function PortfolioView({ artworkData }: Params) {
                 <figure className="flex flex-col items-center bg-panettone-100">
                     <Image
                         className="object-scale-down h-72 w-auto border-8 border-transparent drop-shadow-xl"
-                        src={artwork.src}
-                        width={artwork.width}
-                        height={artwork.height}
+                        src={artwork.data.src}
+                        width={artwork.data.width}
+                        height={artwork.data.height}
                         alt={artwork.title}
-                        blurDataURL={artwork.lowResSrc}
+                        blurDataURL={artwork.data.lowResSrc}
                         placeholder="blur"
                         loading="eager"
                     />

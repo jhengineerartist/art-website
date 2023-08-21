@@ -15,16 +15,18 @@ export function useFullScreenImage(): [[ArtworkInfo, boolean], (a0: ArtworkInfo)
     // and whether the fullscreen view is hidden (false) or shown (true)
     const [fullScrImage, setFullScrImage] = useState<[ArtworkInfo, boolean]>([{
         id: 0,
-        src: "",
+        data: {
+            src: "",
+            height: 0,
+            width: 0,
+            lowResSrc: ""
+        },
         title: "",
         caption: "",
-        height: 0,
-        width: 0,
         date: "",
         class: "GalleryPiece",
         related: [],
         tags: [],
-        lowResSrc: ""
     },
         false]);
 
@@ -41,7 +43,7 @@ export function useFullScreenImage(): [[ArtworkInfo, boolean], (a0: ArtworkInfo)
 
 export function FullScreenImage(params: Params) {
     const { state, hideFullScreen: setHidden } = params;
-    const [{ src, width, height, caption, title, date, lowResSrc }, isFullScreen] = state;
+    const [{ data: { src, width, height, lowResSrc }, caption, title, date }, isFullScreen] = state;
     console.log(width)
     const closeRef = useRef<HTMLElement>(null);
 

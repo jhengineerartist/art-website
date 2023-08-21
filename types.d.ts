@@ -5,10 +5,18 @@ type ArtworkClass =
   "MinorWork" |
   "WorkInProgress"
 
+
+type ImageInfo = {
+  src: string,
+  height: number,
+  width: number,
+  lowResSrc: string
+}
+
 type BlogPost = {
   slug: string;
   title: string;
-  heroImage: string;
+  heroImage: ImageInfo;
   summary: string;
   content: string;
   date: string,
@@ -17,14 +25,11 @@ type BlogPost = {
 
 type ArtworkInfo = {
   id: number,
-  src: string,
-  height: number,
-  width: number,
+  data: ImageInfo,
   title: string,
   caption: string,
   class: ArtworkClass,
   date: string,
   related: number[]
   tags: string[]
-  lowResSrc: string
 }

@@ -8,7 +8,7 @@ type ArtworkInfoJsonData = {
 
 const root = process.cwd();
 
-export default async function getAllArtData() {
+export async function getAllArtData() {
     const artworkPath = path.join(root, "public", "artwork")
     const artworkJsonPath = path.join(artworkPath, "artworkinfo.json");
     const artworkData: ArtworkInfoJsonData = JSON.parse(fs.readFileSync(artworkJsonPath, "utf-8"));
@@ -20,28 +20,32 @@ export default async function getAllArtData() {
     }
     // Make all src files relative to the public directory
     const artworkInfo = await Promise.all(artworkData.artwork.map(async (info: ArtworkInfo) => {
+        const metadata = await getImageMetadata(path.join(artworkPath, info.data.src))
+        const lowResImagePath = path.join(lowResDir, path.basename(info.data.src));
 
-        const metadata = await getImageMetadata(path.join(artworkPath, info.src))
-
-        const lowResImagePath = path.join(lowResDir, path.basename(info.src));
-
-        if (metadata.width !== info.width || metadata.height !== info.height) {
-            console.error(`Artwork metadata is incorrectly represeted for ${info.src} in json: [mdata w: ${metadata.width}]
-             vs json w: ${info.width}], [mdata h: ${metadata.height}] vs json h: ${info.height}]`)
+        if (metadata.width !== info.data.width || metadata.height !== info.data.height) {
+            console.error(`Artwork metadata is incorrectly represeted for ${info.data.src} in json: [mdata w: ${metadata.width}]
+             vs json w: ${info.data.width}], [mdata h: ${metadata.height}] vs json h: ${info.data.height}]`)
         }
 
         // Check if the low-resolution image already exists
         if (!fs.existsSync(lowResImagePath)) {
             await generateLowResImage(
-                path.join(artworkPath, info.src),
+                path.join(artworkPath, info.data.src),
                 lowResImagePath,
-                Math.floor(info.width / 100),
-                Math.floor(info.height / 100)
+                Math.floor(info.data.width / 50),
+                Math.floor(info.data.height / 50)
             );
         }
-        info.src = path.join("/artwork", info.src)
-        info.lowResSrc = path.join("/lowres", path.basename(info.src));
+        info.data.src = path.join("/artwork", info.data.src)
+        info.data.lowResSrc = path.join("/lowres", path.basename(info.data.src));
         return info;
     }));
     return artworkInfo;
+}
+
+export async function getArtworkById(id: number) {
+    // This is a naive approach, eventually do a query against the backend
+    const allArt = await getAllArtData();
+    return allArt.find(art => art.id === id);
 }

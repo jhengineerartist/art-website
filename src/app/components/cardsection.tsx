@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card";
-import getAllPostsData from "@/lib/mdprovider/placeholderprovider";
+import getAllPostsData from "@/lib/providers/placeholderprovider";
 
 export default function CardSection() {
   const allPosts: BlogPost[] = getAllPostsData();
