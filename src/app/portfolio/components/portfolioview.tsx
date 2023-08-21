@@ -16,7 +16,7 @@ export default function PortfolioView({ artworkData }: Params) {
             <div key={artwork.id} className="ml-3 mb-3 group cursor-pointer" onClick={showFullScreen(artwork)}>
                 <figure className="flex flex-col items-center bg-panettone-100">
                     <Image
-                        className="object-scale-down h-72 w-auto border-8 border-transparent drop-shadow-xl"
+                        className="object-scale-down h-64 w-auto border-8 border-transparent drop-shadow-xl"
                         src={artwork.data.src}
                         width={artwork.data.width}
                         height={artwork.data.height}
@@ -36,8 +36,13 @@ export default function PortfolioView({ artworkData }: Params) {
 
     return (
         <div className="min-h-screen">
-            <h1 className="text-panettone-100 mx-auto p-3 text-4xl text-center">Portfolio</h1>
-            <div className="flex flex-wrap content-center justify-center h-full w-full">
+            <div className="text-center mb-4">
+                <h1 className="text-panettone-100 mx-auto p-3 text-4xl text-center">Portfolio</h1>
+                <p className="text-panettone-100">
+                    A collection of my academic and professional artwork.
+                </p>
+            </div>
+            <div className="flex flex-wrap max-w-screen-2xl mx-auto content-center justify-center h-full w-full">
                 {images}
             </div>
             <FullScreenImage {...{ state: fullScrImage, hideFullScreen: hideFullScreen }} />

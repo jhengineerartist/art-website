@@ -40,13 +40,12 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
             href="/portfolio">
             Explore the Portfolio
           </Link>
-
-        </div>
-        <div
-          className="cursor-pointer relative w-full mt-auto pt-12 sm:pt-24 mb-24 text-white text-6xl"
-          onClick={() => scrollToSection("blog")}
-        >
-          <FaChevronDown className="mx-auto" />
+          <div
+            className="cursor-pointer relative w-full mt-16 p-6 text-white text-6xl"
+            onClick={() => scrollToSection("blog")}
+          >
+            <FaChevronDown className="mx-auto" />
+          </div>
         </div>
       </div>
     </section>
