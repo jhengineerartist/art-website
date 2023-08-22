@@ -57,7 +57,6 @@ export function FullScreenImage(params: Params) {
       date
     }, width, height, base64 }, isFullScreen,
   ] = state;
-  console.log(width);
   const closeRef = useRef<HTMLElement>(null);
 
   // Put a listener for when the user clicks somewhere,
