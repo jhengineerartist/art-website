@@ -22,7 +22,7 @@ export default function NavbarDropdown() {
    * 1. useState hook to designate that the dropdown is open or not.
    * 2. useRef hook to refer to the dropdown div for click evaluation.
    * 3. usePathname hook to close the menu when we navigate.
-   * 4. useEffect hook to register and deregister the handler as well
+   * 4. useEffect hooks to register and deregister the handler as well
    * as checking for navigation on path change
    */
 
@@ -43,17 +43,19 @@ export default function NavbarDropdown() {
         toggleDropdown();
       }
     };
-    // If we navigated then hide the dropdown
-    if (isDropdownOpen && prevPath !== path) {
-      setIsDropdownOpen(({ isDropdownOpen }) => ({ isDropdownOpen: !isDropdownOpen, prevPath: path }));
-    }
 
     document.addEventListener("click", handleClickOutside, true);
     return () => {
       document.removeEventListener("click", handleClickOutside, true);
     };
-  }, [closeRef, prevPath, toggleDropdown]);
+  }, [closeRef, toggleDropdown]);
 
+  useEffect(() => {
+    // If we navigated then hide the dropdown
+    if (isDropdownOpen && prevPath !== path) {
+      setIsDropdownOpen(({ isDropdownOpen }) => ({ isDropdownOpen: !isDropdownOpen, prevPath: path }));
+    }
+  }, [prevPath, path, isDropdownOpen]);
 
   const dropdownLinkClass =
     "block text-white text-xl hover:text-enchilada-100 sm:hidden p-2";
