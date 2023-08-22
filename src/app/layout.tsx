@@ -24,9 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${font.className}`}>
         <Navbar />
-        <div className="pt-22">
-          {children}
-        </div>
+        <div className="pt-22">{children}</div>
         <Footer />
       </body>
     </html>

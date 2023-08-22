@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import NavbarDropdown from "./navbardropdown";
 import SocialMedia from "../socialmedia";
@@ -13,12 +13,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-enchilada-500 p-4 sticky top-0 drop-shadow-xl z-10" id="navbar">
+    <nav
+      className="bg-enchilada-500 p-4 sticky top-0 drop-shadow-xl z-10"
+      id="navbar"
+    >
       <div className="mx-auto flex justify-between items-center">
         <NavbarLogo />
         <NavbarLinks />
         <SocialMedia placement="navbar" />
-        <NavbarDropdown isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} />
+        <NavbarDropdown
+          isDropdownOpen={isDropdownOpen}
+          toggleDropdown={toggleDropdown}
+        />
       </div>
     </nav>
   );

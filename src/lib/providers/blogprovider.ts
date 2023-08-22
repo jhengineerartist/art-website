@@ -7,17 +7,16 @@ const root = process.cwd();
 type BlogDataMap = {
   didFetch: boolean;
   posts: BlogPost[];
-}
+};
 
 const blogData: BlogDataMap = {
   didFetch: false,
-  posts: []
-}
+  posts: [],
+};
 
 // Grabs and caches all the posts from disk
 export default function getAllPostsData(): BlogPost[] {
   if (!blogData.didFetch) {
-    console.log("Retrieving blog posts from the disk.")
     // Get file names under /posts
     const placeholderPath = path.join(root, "public", "placeholders", "posts");
     const fileNames = fs.readdirSync(placeholderPath);
@@ -37,10 +36,10 @@ export default function getAllPostsData(): BlogPost[] {
         slug,
         title: data.title,
         heroImage: data.heroimage,
-        tags: data.tags.split(','),
+        tags: data.tags.split(","),
         date: data.date,
         summary: data.summary,
-        content: content
+        content: content,
       };
     });
 

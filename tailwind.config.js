@@ -17,7 +17,7 @@ module.exports = {
         xs: "475px",
       },
       spacing: {
-        '128': '32rem',
+        128: "32rem",
       },
       colors: {
         transparent: "transparent",
@@ -50,6 +50,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require('@tailwindcss/line-clamp'),
+    require("@tailwindcss/line-clamp"),
   ],
 };

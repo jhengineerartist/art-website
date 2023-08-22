@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -19,9 +19,8 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
   ) : undefined;
 
   return (
-    <section id="hero" className="h-screen" >
-      <div className="flex flex-col justify-center items-center bg-gradient-to-t from-black to-33 relative h-full w-full max-h-screen"
-      >
+    <section id="hero" className="h-screen">
+      <div className="flex flex-col justify-center items-center bg-gradient-to-t from-black to-33 relative h-full w-full max-h-screen">
         <Image
           src={heroImage.src}
           alt={heroImage.alt}
@@ -37,7 +36,8 @@ export default function HeroSection({ heroImage, heroLogo }: Props) {
           <div className="relative h-32">{logo}</div>
           <Link
             className="w-fit mx-auto lg:text-2xl text-lg py-2 px-4 border-4 border-enchilada-200 bg-enchilada-200 hover:bg-enchilada-600 hover:border-enchilada-700 text-white rounded-lg transition-all duration-300 mt-10"
-            href="/portfolio">
+            href="/portfolio"
+          >
             Explore the Portfolio
           </Link>
           <div

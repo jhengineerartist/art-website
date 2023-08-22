@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "./card";
-import getAllPostsData from "@/lib/providers/placeholderprovider";
+import Card from "../../components/card";
+import getAllPostsData from "@/lib/providers/blogprovider";
 
-export default function CardSection() {
+export default function BlogSection() {
   const allPosts: BlogPost[] = getAllPostsData();
 
   const cards = allPosts.map((post) => {
@@ -12,19 +12,15 @@ export default function CardSection() {
   return (
     <section
       id="blog"
-      className="flex flex-col items-center justify-spread gap-4 mx-auto h-screen"
+      className="flex flex-col items-center justify-spread gap-4 mx-auto min-h-screen"
     >
       <div className="text-center m-4">
-        <h1 className="text-3xl text-panettone-100 mb-2">
-          Blog
-        </h1>
+        <h1 className="text-3xl text-panettone-100 mb-2">Blog</h1>
         <p className="text-panettone-100">
           Explore my latest blog posts and musings.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center gap-4">
-        {cards}
-      </div>
+      <div className="flex flex-wrap justify-center gap-4">{cards}</div>
     </section>
   );
 }

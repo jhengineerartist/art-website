@@ -1,5 +1,5 @@
 import HeroSection from "./components/herosection";
-import CardSection from "./components/cardsection";
+import BlogSection from "./blog/components/blogsection";
 import herostudy from "../../public/placeholders/hero-study.jpg";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="bg-panettone-300">
       <HeroSection heroImage={heroImage} heroLogo={true} />
-      <CardSection />
+      <BlogSection />
     </main>
   );
 }
