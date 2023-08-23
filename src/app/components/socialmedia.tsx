@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 type SocialMediaProps = {
   placement: "navbar" | "footer";
@@ -30,6 +30,12 @@ function SocialMedia({ placement }: SocialMediaProps) {
         href="https://www.instagram.com/jhirshmanart/"
       >
         <FaInstagram />
+      </Link>
+      <Link
+        className={buttonClass}
+        href="https://www.linkedin.com/in/joseph-hirshman"
+      >
+        <FaLinkedin />
       </Link>
     </div>
   );

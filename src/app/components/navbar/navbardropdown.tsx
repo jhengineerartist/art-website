@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Link from "next/link";
 import { assertEventTargetIsNode } from "@/lib/utils/asserts";
@@ -7,18 +7,17 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export default function NavbarDropdown() {
-
   /**
    * The behavior of the navbar dropdown is a bit nuanced:
    * If the navbar is Open:
    * If a user clicks outside the navbar dropdown, it hides
    * If a user navigates to a new page, it hides
    * If a user clicks on the bar but doesnt navigate, it remains open.
-   * 
+   *
    * If the navbar is Closed:
    * It only opens when the user clicks the hamburger icon.
-   * 
-   * This is accomplished via 
+   *
+   * This is accomplished via
    * 1. useState hook to designate that the dropdown is open or not.
    * 2. useRef hook to refer to the dropdown div for click evaluation.
    * 3. usePathname hook to close the menu when we navigate.
@@ -28,18 +27,27 @@ export default function NavbarDropdown() {
 
   // State Hook
   const path = usePathname();
-  const [{ isDropdownOpen, prevPath }, setIsDropdownOpen] = useState({ isDropdownOpen: false, prevPath: path });
+  const [{ isDropdownOpen, prevPath }, setIsDropdownOpen] = useState({
+    isDropdownOpen: false,
+    prevPath: path,
+  });
   const toggleDropdown = () => {
-    setIsDropdownOpen(({ isDropdownOpen }) => ({ isDropdownOpen: !isDropdownOpen, prevPath }));
+    setIsDropdownOpen(({ isDropdownOpen }) => ({
+      isDropdownOpen: !isDropdownOpen,
+      prevPath,
+    }));
   };
 
   const closeRef = useRef<HTMLDivElement>(null);
   // Effect for handler registration
   useEffect(() => {
-
     const handleClickOutside = (event: Event) => {
       assertEventTargetIsNode(event.target);
-      if (closeRef.current && !closeRef.current.contains(event.target) && isDropdownOpen) {
+      if (
+        closeRef.current &&
+        !closeRef.current.contains(event.target) &&
+        isDropdownOpen
+      ) {
         toggleDropdown();
       }
     };
@@ -53,7 +61,10 @@ export default function NavbarDropdown() {
   useEffect(() => {
     // If we navigated then hide the dropdown
     if (isDropdownOpen && prevPath !== path) {
-      setIsDropdownOpen(({ isDropdownOpen }) => ({ isDropdownOpen: !isDropdownOpen, prevPath: path }));
+      setIsDropdownOpen(({ isDropdownOpen }) => ({
+        isDropdownOpen: !isDropdownOpen,
+        prevPath: path,
+      }));
     }
   }, [prevPath, path, isDropdownOpen]);
 
@@ -71,8 +82,9 @@ export default function NavbarDropdown() {
       </button>
       {/* Dropdown Menu */}
       <div
-        className={`absolute bg-enchilada-600 p-2 top-16 right-0 max-w-screen w-[calc(100vw-3rem)] space-y-2 border border-enchilada-800 rounded transform origin-top-right transition-transform duration-300 ${isDropdownOpen ? "block" : "hidden"
-          }`}
+        className={`absolute bg-enchilada-600 p-2 top-16 right-0 max-w-screen w-[calc(100vw-3rem)] space-y-2 border border-enchilada-800 rounded transform origin-top-right transition-transform duration-300 ${
+          isDropdownOpen ? "block" : "hidden"
+        }`}
         ref={closeRef}
       >
         {/* Display dropdown options for smaller screens */}
@@ -92,6 +104,6 @@ export default function NavbarDropdown() {
           Resume
         </Link>
       </div>
-    </div >
+    </div>
   );
 }

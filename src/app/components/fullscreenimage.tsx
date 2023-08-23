@@ -31,7 +31,7 @@ export function useFullScreenImage(): [
       },
       height: 0,
       width: 0,
-      base64: ""
+      base64: "",
     },
     false,
   ]);
@@ -50,12 +50,13 @@ export function useFullScreenImage(): [
 export function FullScreenImage(params: Params) {
   const { state, hideFullScreen: setHidden } = params;
   const [
-    { info: {
-      src,
-      caption,
-      title,
-      date
-    }, width, height, base64 }, isFullScreen,
+    {
+      info: { src, caption, title, date },
+      width,
+      height,
+      base64,
+    },
+    isFullScreen,
   ] = state;
   const closeRef = useRef<HTMLElement>(null);
 

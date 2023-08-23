@@ -8,7 +8,6 @@ type Params = {
 export default function PostView({ postData }: Params) {
   const { title, heroImage, content } = postData;
 
-
   const markdownComponents: object = {
     p: (paragraph: { node?: any; children?: any }) => {
       // metastring parsing logic simply taken from the blog post:
