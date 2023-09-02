@@ -31,7 +31,7 @@ export default function PortfolioView({ artworkData }: Params) {
             width={width}
             height={height}
             alt={info.title}
-            blurDataURL={artwork.base64}
+            blurDataURL={base64}
             placeholder="blur"
             loading="eager"
           />

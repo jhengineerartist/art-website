@@ -22,7 +22,6 @@ type ArtworkInfo = {
   caption: string;
   class: ArtworkClass;
   date: string;
-  related: number[];
   tags: string[];
 };
 

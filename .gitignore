@@ -5,8 +5,20 @@
 /.pnp
 .pnp.js
 
+# logging
+*.log
+
 # testing
 /coverage
+
+# firebase emulation
+accounts.json
+storage.rules
+database.rules.json
+firebase.json
+.firebaserc
+firestore.rules
+firestore.indexes.json
 
 # next.js
 /.next/
