@@ -26,7 +26,6 @@ export function useFullScreenImage(): [
         caption: "",
         date: "",
         class: "GalleryPiece",
-        related: [],
         tags: [],
       },
       height: 0,

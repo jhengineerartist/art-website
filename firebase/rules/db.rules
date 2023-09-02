@@ -1,6 +1,6 @@
 {
   "rules": {
-    ".read": "auth.token.admin === true", // only admins can read the data
+    ".read": "true",
     ".write": "auth.token.admin === true", // only admins can write the data
   }
 }
