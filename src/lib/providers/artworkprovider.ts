@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { getPlaiceholder } from "plaiceholder";
+import { getBase64ImageBlur } from "../utils/ssrutils";
 import { firebaseDB, firebaseStorage } from "./firebaseprovider";
 import { ref as dbRef, get } from "firebase/database"
 import { ref as storageRef, getDownloadURL } from "firebase/storage"
@@ -38,11 +38,9 @@ export async function getAllArtData(): Promise<ArtworkData[]> {
 
         const buffer = await getFileBuffer(info.src);
 
-        const {
-            base64,
-            metadata: { height, width },
-        } = await getPlaiceholder(buffer, { size: 10 });
-        return { info, height, width, base64 };
+        const imgBlur = await getBase64ImageBlur(buffer);
+
+        return { info, ...imgBlur };
     }));
 
     return artInfoTemp;

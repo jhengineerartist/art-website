@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# service account key (used to configure the emulator suite)
+serviceAccountKey.json
+
 # next.js
 /.next/
 /out/
@@ -33,3 +36,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#logs
+*.log

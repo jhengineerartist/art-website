@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
-import { getDatabase } from 'firebase/database'
-import { getStorage } from 'firebase/storage'
+import { getDatabase, connectDatabaseEmulator } from 'firebase/database'
+import { getStorage, connectStorageEmulator } from 'firebase/storage'
 
 const config = {
     apiKey: `${process.env.CLIENT_FIREBASE_APIKEY}`,
@@ -11,7 +11,21 @@ const config = {
     messagingSenderId: `${process.env.CLIENT_FIREBASE_MESSAGINGSENDERID}`,
     appId: `${process.env.CLIENT_FIREBASE_APPID}`
 };
+if (process.env.NODE_ENV === "test") {
+    config.databaseURL = process.env.TEST_FIREBASE_DATABASEURL as string
+    console.log(JSON.stringify(config));
+}
 
-export const firebaseApp = initializeApp(config);
-export const firebaseDB = getDatabase(firebaseApp);
-export const firebaseStorage = getStorage(firebaseApp);
+
+
+const firebaseApp = initializeApp(config);
+
+const firebaseDB = getDatabase(firebaseApp);
+const firebaseStorage = getStorage(firebaseApp);
+
+if (process.env.NODE_ENV === "test") {
+    connectStorageEmulator(firebaseStorage, "localhost", 9199);
+    connectDatabaseEmulator(firebaseDB, "localhost", 9000);
+}
+
+export { firebaseApp, firebaseDB, firebaseStorage };

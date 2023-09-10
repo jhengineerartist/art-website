@@ -1,2 +1,0 @@
-Web / API server started at 127.0.0.1:4000
-node[78319]: ../src/node.cc:667:void node::ResetStdio(): Assertion `!(err != 0) || (err == -1 && (*__errno_location ()) == 1)' failed.
