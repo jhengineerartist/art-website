@@ -1,9 +1,12 @@
 import { expect, jest, describe, test, beforeAll, beforeEach, afterAll } from "@jest/globals";
 import { firebaseDB, firebaseStorage } from "../firebaseprovider";
+import { initializeTestEnvironment, RulesTestEnvironment, assertFails, TestEnvironmentConfig } from '@firebase/rules-unit-testing';
 import { getAllArtData } from "../artworkprovider";
 import { ref, set, get } from "firebase/database";
+import fs from "fs";
+import path from "path";
 
-
+let testEnv: RulesTestEnvironment;
 const testArtwork1: ArtworkInfo = {
     "id": 0,
     "src": "/artwork/cast_project.jpg",
@@ -25,10 +28,21 @@ const testArtwork1: ArtworkInfo = {
 beforeAll(async () => {
     console.log("Running ArtworkProvider Tests");
 
-    const fbRef = ref(firebaseDB, "test");
-    const snapshot = await get(fbRef);
-    console.log(snapshot.val())
-
+    const root = process.cwd();
+    testEnv = await initializeTestEnvironment({
+        // This should be set to a test projectid if you load in a configured .env.jest
+        projectId: process.env.CLIENT_FIREBASE_PROJECTID,
+        database: {
+            rules: fs.readFileSync(path.join(root, 'firebase', 'rules', 'db.rules'), "utf8"),
+            host: "localhost",
+            port: 9000
+        },
+        storage: {
+            rules: fs.readFileSync(path.join(root, 'firebase', 'rules', 'storage.rules'), "utf8"),
+            host: "localhost",
+            port: 9199
+        },
+    });
 })
 
 jest.mock("../../utils/ssrutils", () => ({
@@ -46,6 +60,9 @@ function dummy() {
     return 42;
 }
 
-test("dummy function should return 42", () => {
+test("dummy function should return 42", async () => {
+    const fbRef = ref(firebaseDB);
+    const snap = await get(fbRef);
+
     expect(dummy()).toBe(42);
 });
