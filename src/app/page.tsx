@@ -1,6 +1,6 @@
 import HeroSection from "./components/herosection";
 import BlogSection from "./blog/components/blogsection";
-import herostudy from "../../public/placeholders/hero-study.jpg";
+import herostudy from "../../public/hero_painting.jpg";
 
 export default function Home() {
   const heroImage = {
