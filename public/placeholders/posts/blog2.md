@@ -10,8 +10,6 @@ tags: charcoal,drawing,figure,studies,value
 
 Charcoal drawing is an expressive and versatile medium that allows artists to capture the human form in a unique and captivating way. When working with charcoal, artists can create stunning nude figure drawings that evoke emotion and showcase the beauty of the human body. In this blog post, we will explore the art of figure drawing with charcoal, offering tips and techniques to help you achieve impressive results.
 
-![AltText {width: 768} {height: 432} {priority} {title: Sample} {caption: Photo by Someone}](/artwork/charcoal_nude.jpg)
-
 ## Preparing Your Workspace
 
 Before you begin, set up a comfortable and well-lit workspace. Charcoal can be messy, so having a drop cloth or newspapers on your drawing surface is a smart idea. Gather your materials, including:
